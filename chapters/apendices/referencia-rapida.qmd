@@ -1,0 +1,74 @@
+---
+title: "Guía de Referencia Rápida"
+subtitle: "Prompting Científico — consulta en una página"
+date: last-modified
+description: "Resumen de los siete componentes, niveles de verbo y arquitectura de protocolo multi-fase"
+---
+
+## Los 7 Componentes del Prompt Científico
+
+| Componente | Función | Si se omite… |
+|---|---|---|
+| **Rol** | Define el marco epistemológico desde el que razona el modelo | Respuesta genérica y superficial |
+| **Contexto** | Sitúa el problema; reduce supuestos implícitos | El modelo rellena vacíos con inferencias no solicitadas |
+| **Alcance** | Delimita el dominio y nivel de análisis | Expansión temática o conclusiones fuera de rango |
+| **Tarea** | Especifica la operación cognitiva (describir ≠ interpretar ≠ concluir) | Dispersión o confusión de niveles de inferencia |
+| **Restricciones** | Reglas explícitas sobre qué no puede afirmarse | Alucinaciones, sobreconfianza, invención de datos |
+| **Salida esperada** | Define la estructura evaluable del resultado | Texto fluido pero sin separación de datos/inferencias/límites |
+| **Verificación** | Criterios para que un humano pueda examinar la respuesta | Respuesta plausible pero no contrastable |
+
+> **Regla de oro:** las restricciones acotan *qué puede decir* la IA; la verificación define *cómo juzgas tú* lo que dijo.
+
+---
+
+## Niveles de Verbo: Riesgo Epistemológico
+
+| Nivel | Verbos típicos | Tipo de afirmación | Exige… |
+|---|---|---|---|
+| 🟢 **Descriptivo** | Describir, Resumir, Identificar, Enumerar | Factual / Sintética | Objeto o fuente delimitada |
+| 🟡 **Analítico** | Analizar, Comparar, Relacionar, Clasificar | Interpretativa / Relacional | Criterios y dimensiones explícitas |
+| 🟠 **Inferencial** | Explicar (mecanismo), Interpretar, Inferir, Argumentar | Causal / Hermenéutica | Evidencia o marco teórico + declaración de supuestos |
+| 🔴 **Decisional** | Evaluar, Concluir, Proponer, Diseñar, Decidir | Conclusiva / Prospectiva | Marco evaluativo + límites explícitos + declaración de incertidumbre |
+
+> **Criterio rápido:** si el verbo solicita causalidad, decisión o hipótesis, aumenta la estructura de restricciones y verificación proporcionalmente.
+
+---
+
+## Arquitectura de Protocolo Multi-fase
+
+| Fase | Función epistémica | Nivel de inferencia | ¿Gate o checkpoint? |
+|---|---|---|---|
+| **1 — Exploración** | Localización sin interpretación | Bajo | Checkpoint: evaluar cobertura |
+| **2 — Extracción** | Identificación literal estructurada | Bajo–Medio | **Gate:** no avanzar sin cita textual verificable |
+| **3 — Normalización** | Organización y estandarización | Medio | Checkpoint: contrastar con fuente externa |
+| **4 — Evaluación** | Clasificación interpretativa | Alto | **Gate obligatorio:** revisión humana antes de aceptar |
+| **5 — Integración** | Juicio científico | **No delegable** | Decisión del investigador |
+
+### Checkpoint vs Gate
+
+| | Checkpoint | Gate |
+|---|---|---|
+| **Qué es** | Punto de revisión humana | Regla que impide avanzar si no se cumple una condición |
+| **Ejemplo** | Revisar cobertura de fragmentos | No avanzar si falta cita textual |
+| **Quién decide** | El investigador | El protocolo (aplicado por el investigador) |
+
+---
+
+## Cómo ejecutar el protocolo
+
+| Entorno | Práctica recomendada |
+|---|---|
+| **Chat (ej. ChatGPT)** | Fase por fase; copiar salida validada antes de enviar la siguiente |
+| **Jupyter Notebook** | Una celda por fase; revisar antes de ejecutar la siguiente |
+| **API** | Pipeline con gates automáticos en fases de bajo riesgo; revisión humana obligatoria en fases altas |
+
+> **Regla central:** si pegas las cinco fases en un solo mensaje, vuelves a un único acto autoregresivo. La separación epistémica no es textual — es arquitectónica.
+
+---
+
+## El principio que une todo
+
+> *La IA genera texto plausible. El conocimiento solo emerge cuando tú lo validas con criterios externos.*
+
+Un prompt científico no garantiza verdad — garantiza que puedas **evaluar, verificar y reproducir** la respuesta.
+La Fase 5 de todo protocolo — el juicio final sobre qué evidencia es suficiente — es tuya y solo tuya.

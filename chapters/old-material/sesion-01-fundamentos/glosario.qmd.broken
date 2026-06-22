@@ -1,0 +1,391 @@
+---
+title: "Glosario de Términos"
+subtitle: "Conceptos clave de IA generativa y prompting científico"
+author: "{{< meta author >}}"
+date: last-modified
+description: "Definiciones de términos técnicos utilizados en la sesión"
+categories: [glosario, referencia, terminología]
+---
+
+## Introducción
+
+Este glosario define los conceptos clave utilizados a lo largo de la sesión. Los términos se presentan en orden temático para facilitar la comprensión.
+
+::: {.callout-note}
+## Nota de Alcance
+
+En esta sesión aprenderás a **analizar y escribir prompts científicos**.  
+**No** se espera que domines IA generativa ni que produzcas prompts "perfectos".  
+El objetivo es desarrollar **criterio científico y pensamiento crítico**.
+
+:::
+
+---
+
+## Términos Fundamentales
+
+::: {.accordion}
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es la IA generativa?
+:::
+::: {.accordion-body}
+
+Modelos computacionales capaces de **generar texto, código u otros contenidos** a partir de patrones estadísticos aprendidos en grandes volúmenes de datos.
+
+**Características importantes:**
+- No razona como un humano
+- No tiene un modelo interno del mundo
+- No comprende biología
+- Predice secuencias de texto plausibles
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es un LLM (Large Language Model)?
+:::
+::: {.accordion-body}
+
+Un **LLM (Large Language Model)** es un modelo de inteligencia artificial entrenado con grandes volúmenes de texto para **aprender patrones del lenguaje** y **predecir la siguiente palabra (token)** en una secuencia.
+
+**Características clave:**
+- Aprende a partir de datos textuales masivos
+- No "entiende" el contenido como un humano; **modela probabilidades**
+- Funciona a nivel de **tokens**, no de ideas o conceptos
+- Puede generar texto coherente, responder preguntas y explicar procedimientos
+
+**Qué puede hacer:**
+- Explicar conceptos técnicos
+- Sugerir estructuras de análisis o código
+- Resumir y reformular información
+- Asistir en tareas de documentación y aprendizaje
+
+**Qué NO puede hacer:**
+- Generar conocimiento científico nuevo
+- Validar la veracidad de resultados experimentales
+- Entender causalidad biológica
+- Sustituir el criterio y la responsabilidad humana
+
+::: {.callout-important}
+## Recuerda
+
+> Un LLM no conoce: **predice texto**.  
+> El conocimiento científico sigue siendo responsabilidad del estudiante.
+
+:::
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es un token?
+:::
+::: {.accordion-body}
+
+Unidad mínima de texto que procesa un modelo de lenguaje.
+
+- Puede ser una palabra, parte de una palabra o un símbolo
+- No representa una unidad semántica
+- El costo y el límite de los modelos dependen del número de tokens
+
+**Importancia:** 
+
+Saber cuántos tokens consume tu prompt te ayuda a **no exceder la ventana de contexto y reducir costos** cuando usas APIs. Cada modelo tiene distintos límites de tokens por interacción.
+
+**Herramientas útiles:**
+- [Token Calculator for LLMs](https://token-calculator.net/)
+- [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es un prompt?
+:::
+::: {.accordion-body}
+
+Una **especificación escrita** que describe:
+- El contexto
+- La tarea
+- Las restricciones
+- El formato esperado
+
+En este curso, un prompt es equivalente a un **protocolo experimental**.
+
+**Prompts claros y concisos** reducen ambigüedad y errores.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es prompting?
+:::
+::: {.accordion-body}
+
+**Prompting** es el proceso de **formular instrucciones, preguntas o contextos (prompts)** para guiar el comportamiento de un modelo de lenguaje (LLM) y obtener una respuesta útil, controlada y relevante.
+
+En términos simples:
+
+> Prompting es **decidir qué decirle a la IA y cómo decírselo** para que responda de forma adecuada.
+
+**Un prompt puede incluir:**
+- Contexto (qué problema se quiere resolver)
+- Instrucciones claras (qué se espera de la respuesta)
+- Restricciones (qué no debe hacer la IA)
+- Formato deseado de salida
+- Criterios de validación
+
+El modelo **no entiende la intención**, solo responde a los **patrones explícitos** del prompt.
+
+::: {.callout-important}
+## Recuerda
+
+> Un buen prompt no hace inteligente a la IA;  
+> **revela qué tan claro piensa quien lo escribe**.
+
+:::
+
+**Recursos adicionales:**
+- [Prompting Guide](https://www.promptingguide.ai/es/introduction/tips)
+- [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es una alucinación?
+:::
+::: {.accordion-body}
+
+Respuesta generada por la IA que **suena correcta pero es falsa**, sin intención ni conciencia de error.
+
+**Ejemplos:**
+- Referencias inexistentes
+- Datos inventados
+- Conclusiones no sustentadas
+
+::: {.callout-warning}
+## Regla de BEII
+
+Toda salida de IA debe poder **verificarse independientemente**.
+
+:::
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué es un chatbot?
+:::
+::: {.accordion-body}
+
+Un **chatbot** es una aplicación de software diseñada para **interactuar con personas mediante lenguaje natural**, simulando una conversación humana.
+
+Un chatbot moderno:
+- Recibe texto (o voz) del usuario
+- Lo procesa con un modelo de lenguaje
+- Genera una respuesta en lenguaje natural
+
+::: {.callout-note}
+## Importante
+
+El chatbot **no es el modelo**, es la **interfaz** que permite conversar con él.
+
+:::
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Verificación y Reproducibilidad
+:::
+::: {.accordion-body}
+
+Principio central del curso:
+
+::: {.callout-important}
+## Principio Fundamental
+
+> *Si no se puede verificar, no es conocimiento científico.*
+
+:::
+
+La verificación implica:
+- Comprobar afirmaciones con datos o literatura
+- Reproducir análisis con herramientas estándar
+- Validar conclusiones con métodos independientes
+
+:::
+:::
+
+:::
+
+---
+
+## Modelos de Lenguaje Grande (LLM) Conocidos
+
+Esta tabla muestra los LLM más utilizados en la actualidad:
+
+| Familia/Nombre | Desarrollador | Tipo de Modelo | Arquitectura Base | Multimodal | Acceso | Uso Típico |
+|----------------|---------------|----------------|-------------------|------------|--------|------------|
+| **GPT** | OpenAI | GPT-like | Transformer (decoder-only) | Sí | Propietario | Chatbots, código, análisis |
+| **Gemini** | Google | Multimodal nativo | Transformer | Sí | Propietario | Asistentes integrados |
+| **Claude** (Sonnet/Opus/Haiku) | Anthropic | GPT-like | Transformer (decoder-only) | Parcial | Propietario | Razonamiento, redacción |
+| **LLaMA** | Meta | GPT-like | Transformer (decoder-only) | No | Abierto/semi-abierto | Investigación |
+| **Mistral** | Mistral AI | GPT-like | Transformer (decoder-only) | No | Abierto | Modelos ligeros |
+| **Falcon** | TII | GPT-like | Transformer (decoder-only) | No | Abierto | Investigación |
+| **BLOOM** | BigScience | GPT-like | Transformer (decoder-only) | No | Abierto | Ciencia abierta |
+
+: Principales modelos de lenguaje grande {.striped .hover}
+
+### Cómo Leer la Tabla
+
+::: {.callout-tip}
+## Interpretación de Columnas
+
+- **GPT-like**: Modelos autoregresivos que predicen el siguiente token (la gran mayoría)
+- **Multimodal nativo**: Diseñados desde el inicio para manejar texto, imágenes y otros datos
+- **Decoder-only Transformer**: Arquitectura dominante en LLM modernos
+- **Acceso Propietario**: Requiere pago o suscripción
+- **Acceso Abierto**: Código y/o pesos disponibles públicamente
+
+:::
+
+---
+
+## Técnicas de Prompting
+
+::: {.accordion}
+
+::: {.accordion-item}
+::: {.accordion-header}
+Zero-shot
+:::
+::: {.accordion-body}
+
+Técnica donde se le pide al modelo que realice una tarea sin proporcionarle ejemplos previos.
+
+**Ejemplo:**
+```text
+Clasifica este texto como positivo o negativo:
+"La película fue aburrida y predecible."
+```
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Few-shot
+:::
+::: {.accordion-body}
+
+Técnica donde se proporcionan algunos ejemplos antes de la tarea principal.
+
+**Ejemplo:**
+```text
+Clasifica los siguientes textos:
+
+Ejemplo 1: "Excelente película" → Positivo
+Ejemplo 2: "No me gustó" → Negativo
+
+Ahora clasifica: "La película fue aburrida y predecible."
+```
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Chain of Thought (CoT)
+:::
+::: {.accordion-body}
+
+Técnica que pide al modelo que muestre su razonamiento paso a paso.
+
+**Ejemplo:**
+```text
+Resuelve este problema mostrando tu razonamiento:
+
+Pregunta: ¿Cuántos genes hay en un operón con 3 genes estructurales?
+
+Razonamiento paso a paso:
+1. ...
+2. ...
+```
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Auto-consistencia
+:::
+::: {.accordion-body}
+
+Técnica que genera múltiples respuestas y selecciona la más frecuente o consistente.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Prompt Chaining
+:::
+::: {.accordion-body}
+
+Técnica que divide una tarea compleja en múltiples prompts secuenciales, donde la salida de uno alimenta al siguiente.
+
+**Ejemplo:**
+1. Prompt 1: Extraer información clave
+2. Prompt 2: Analizar la información extraída
+3. Prompt 3: Generar conclusiones basadas en el análisis
+
+:::
+:::
+
+:::
+
+---
+
+## Recursos Adicionales
+
+Para profundizar en estos conceptos, consulta:
+
+- **[Guía de Prompting](https://www.promptingguide.ai/es/introduction/examples)**: Ejemplos prácticos y técnicas
+- **[Prompt Engineering Guide (GitHub)](https://github.com/dair-ai/Prompt-Engineering-Guide)**: Repositorio completo de técnicas
+- **[Página de Recursos](recursos.qmd)**: Materiales curados para el curso
+
+---
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-prev}
+::: {.chapter-nav-label}
+Anterior
+:::
+::: {.chapter-nav-title}
+Patrones Avanzados
+:::
+:::
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Siguiente
+:::
+::: {.chapter-nav-title}
+Recursos
+:::
+:::
+
+:::
+

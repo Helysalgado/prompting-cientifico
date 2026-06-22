@@ -1,0 +1,492 @@
+---
+title: "Exercise: Title of the Exercise"
+subtitle: "Chapter X - Topic Name"
+author: "{{< meta author >}}"
+date: last-modified
+date-format: "MMMM D, YYYY"
+description: "Brief description of what this exercise covers"
+categories: [exercises, topic, difficulty-level]
+---
+
+::: {.callout-important}
+## 📝 Exercise Overview
+
+**Topic**: Main topic being practiced  
+**Difficulty**: <span class="badge badge-warning">Intermediate</span>  
+**Estimated Time**: 30-45 minutes  
+**Prerequisites**: List of concepts/chapters that should be completed first
+
+:::
+
+## Learning Objectives {.unnumbered}
+
+By completing this exercise, you will:
+
+- Objective 1: Practice specific skill
+- Objective 2: Apply learned concepts
+- Objective 3: Develop problem-solving abilities
+- Objective 4: Gain hands-on experience
+
+## Background / Context
+
+Provide relevant context for the exercise. Explain:
+
+- Why this exercise is important
+- What real-world problems it addresses
+- How it connects to course concepts
+
+::: {.callout-note}
+## Scenario
+
+Present a realistic scenario or use case that frames the exercise:
+
+*"You are working as a data scientist at Company X. Your manager has asked you to..."*
+
+:::
+
+## Problem Statement
+
+Clearly state what needs to be accomplished:
+
+### Part 1: Initial Setup
+
+**Task**: Describe what the student needs to do.
+
+**Requirements**:
+
+1. Requirement 1
+2. Requirement 2
+3. Requirement 3
+
+### Part 2: Core Implementation
+
+**Task**: Describe the main challenge.
+
+**Specifications**:
+
+- Specification 1
+- Specification 2
+- Specification 3
+
+### Part 3: Analysis and Interpretation
+
+**Task**: Describe analytical or interpretive work.
+
+**Questions to Address**:
+
+1. Question 1
+2. Question 2
+3. Question 3
+
+## Provided Resources
+
+### Data
+
+::: {.callout-note}
+## Dataset Information
+
+**Source**: Origin of the data  
+**Format**: File format (CSV, JSON, etc.)  
+**Size**: Approximate size  
+**Location**: `resources/data/filename.csv`
+
+**Description**: Brief description of the dataset and what it contains.
+
+:::
+
+### Starter Code
+
+```{python}
+#| filename: "exercise_starter.py"
+#| eval: false
+
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+
+# TODO: Your code starts here
+
+# Part 1: Load and explore the data
+
+# Part 2: Process and analyze
+
+# Part 3: Generate results
+```
+
+### Helper Functions
+
+::: {.callout-tip collapse="true"}
+## Optional Helper Functions
+
+If you need assistance, here are some helper functions you can use:
+
+```{python}
+#| eval: false
+
+def helper_function_1(param):
+    """
+    Description of what this function does.
+    """
+    # Implementation
+    pass
+
+def helper_function_2(param1, param2):
+    """
+    Description of what this function does.
+    """
+    # Implementation
+    pass
+```
+
+:::
+
+## Guidance and Hints
+
+::: {.panel-tabset}
+
+## General Approach
+
+1. **Step 1**: Break down the problem
+   - Sub-step 1a
+   - Sub-step 1b
+
+2. **Step 2**: Plan your solution
+   - Sub-step 2a
+   - Sub-step 2b
+
+3. **Step 3**: Implement incrementally
+   - Sub-step 3a
+   - Sub-step 3b
+
+4. **Step 4**: Test and validate
+   - Sub-step 4a
+   - Sub-step 4b
+
+## Hint 1: Part 1
+
+::: {.callout-tip}
+Click to reveal hint for Part 1...
+
+Consider using the following approach:
+- Suggestion 1
+- Suggestion 2
+
+:::
+
+## Hint 2: Part 2
+
+::: {.callout-tip}
+Click to reveal hint for Part 2...
+
+Think about:
+- Consideration 1
+- Consideration 2
+
+:::
+
+## Hint 3: Part 3
+
+::: {.callout-tip}
+Click to reveal hint for Part 3...
+
+Remember to:
+- Reminder 1
+- Reminder 2
+
+:::
+
+:::
+
+## Expected Output
+
+Describe what the final output should look like:
+
+### Sample Output Format
+
+```
+Expected output structure:
+- Element 1: description
+- Element 2: description
+- Element 3: description
+```
+
+### Example Visualization
+
+If the exercise produces visualizations, show an example:
+
+![Example of expected visualization](../../assets/images/example-output.png){fig-alt="Description of expected output"}
+
+## Evaluation Criteria
+
+Your submission will be evaluated based on:
+
+| Criterion | Weight | Description |
+|-----------|--------|-------------|
+| **Correctness** | 40% | Solution produces correct results |
+| **Code Quality** | 25% | Clean, readable, well-documented code |
+| **Efficiency** | 15% | Appropriate algorithms and data structures |
+| **Analysis** | 15% | Quality of interpretation and insights |
+| **Presentation** | 5% | Clear organization and formatting |
+
+: Grading Rubric {#tbl-rubric}
+
+::: {.callout-warning}
+## Requirements
+
+Your submission must:
+
+- ✓ Include all required parts
+- ✓ Run without errors
+- ✓ Follow code style guidelines
+- ✓ Include comments and documentation
+- ✓ Provide clear explanations for analysis
+
+:::
+
+## Submission Instructions
+
+### Format
+
+Submit the following files:
+
+1. **Code file**: `exercise_X_yourname.py` or `exercise_X_yourname.ipynb`
+2. **Report** (if required): `exercise_X_report_yourname.pdf`
+3. **Data/Results**: Any output files generated
+
+### Submission Method
+
+::: {.panel-tabset}
+
+## GitHub
+
+1. Fork the course repository
+2. Create a new branch: `exercise-X-yourname`
+3. Add your files to: `submissions/exercise-X/`
+4. Commit with clear message
+5. Create a Pull Request
+
+## Learning Management System
+
+1. Prepare all files in a single folder
+2. Compress as: `exercise_X_yourname.zip`
+3. Upload to the course LMS
+4. Verify successful upload
+
+## Email
+
+If other methods aren't available:
+
+1. Combine files in a ZIP archive
+2. Email to: {{< meta email >}}
+3. Subject: "Course Name - Exercise X Submission"
+
+:::
+
+### Deadline
+
+**Due Date**: YYYY-MM-DD, 23:59  
+**Late Submission Policy**: Specify the policy
+
+::: {.callout-tip}
+## Submission Checklist
+
+Before submitting, verify:
+
+- [ ] All required parts are complete
+- [ ] Code runs without errors
+- [ ] Comments and documentation included
+- [ ] Results are clearly presented
+- [ ] Files are properly named
+- [ ] Submission follows specified format
+
+:::
+
+## Solution
+
+::: {.callout-important collapse="true"}
+## 🔒 Complete Solution
+
+**Note**: Try to complete the exercise on your own before viewing the solution!
+
+### Part 1 Solution
+
+```{python}
+#| eval: false
+
+# Complete solution for Part 1
+# Step-by-step implementation with explanations
+```
+
+**Explanation**: Detailed explanation of the approach and why it works.
+
+### Part 2 Solution
+
+```{python}
+#| eval: false
+
+# Complete solution for Part 2
+# Step-by-step implementation with explanations
+```
+
+**Explanation**: Detailed explanation of the approach and why it works.
+
+### Part 3 Solution
+
+```{python}
+#| eval: false
+
+# Complete solution for Part 3
+# Step-by-step implementation with explanations
+```
+
+**Explanation**: Detailed explanation of the approach and insights gained.
+
+### Alternative Approaches
+
+::: {.callout-tip}
+## Other Valid Solutions
+
+Describe alternative approaches that also solve the problem:
+
+1. **Approach 2**: Description and when to use it
+2. **Approach 3**: Description and its advantages
+
+:::
+
+:::
+
+## Extension Challenges
+
+::: {.callout-note}
+## 🚀 For Advanced Learners
+
+If you've completed the main exercise and want more challenge:
+
+### Challenge 1: Optimization
+
+Improve the efficiency of your solution. Can you reduce time complexity?
+
+### Challenge 2: Additional Features
+
+Add these enhancements:
+- Feature 1
+- Feature 2
+- Feature 3
+
+### Challenge 3: Edge Cases
+
+Handle these edge cases:
+- Edge case 1
+- Edge case 2
+- Edge case 3
+
+:::
+
+## Related Resources
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### 📖 Chapter References
+
+- Chapter X: Topic Name
+- Chapter Y: Related Topic
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### 🔗 External Resources
+
+- [Resource 1](https://example.com)
+- [Resource 2](https://example.com)
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### 🎯 Similar Exercises
+
+- Exercise Y
+- Exercise Z
+
+:::
+:::
+
+:::
+
+## FAQ
+
+::: {.accordion}
+
+::: {.accordion-item}
+::: {.accordion-header}
+Q: Common question 1?
+:::
+::: {.accordion-body}
+A: Answer to the first common question.
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Q: Common question 2?
+:::
+::: {.accordion-body}
+A: Answer to the second common question.
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Q: Common question 3?
+:::
+::: {.accordion-body}
+A: Answer to the third common question.
+:::
+:::
+
+:::
+
+## Get Help
+
+::: {.callout-tip}
+## Need Assistance?
+
+- **Office Hours**: Days and times
+- **Discussion Forum**: Link to forum
+- **Email**: {{< meta email >}}
+- **Study Groups**: Information about peer learning
+
+:::
+
+---
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-prev}
+::: {.chapter-nav-label}
+Previous
+:::
+::: {.chapter-nav-title}
+Previous Exercise/Chapter
+:::
+:::
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Next
+:::
+::: {.chapter-nav-title}
+Next Exercise/Chapter
+:::
+:::
+
+:::
+

@@ -1,0 +1,230 @@
+---
+title: "Sesión Introductoria: Fundamentos Epistemológicos del Prompting Científico"
+subtitle: "Uso crítico y científicamente fundamentado de IA generativa"
+date: last-modified
+date-format: "DD/MM/YYYY"
+description: "Introducción al uso crítico, responsable y científicamente fundamentado de modelos de IA generativa en contextos de investigación científica y técnica"
+categories: [fundamentos, epistemología, ia-generativa, prompting]
+---
+
+::: {.learning-objectives}
+### Objetivos de Aprendizaje {.unnumbered}
+
+Al finalizar esta sesión, serás capaz de:
+
+- **Distinguir** entre prompting creativo y prompting científico, identificando el tipo de conocimiento que produce cada uno
+- **Formular un prompt científico** que incluya explícitamente: rol, contexto, tarea, restricciones y criterios de verificabilidad
+- **Identificar supuestos implícitos** y límites de inferencia en respuestas generadas por IA
+- **Evaluar críticamente** un prompt deficiente y mejorarlo usando patrones avanzados
+
+:::
+
+## Propósito de la Sesión
+
+Esta sesión introduce a estudiantes al uso **crítico, responsable y científicamente fundamentado** de modelos de IA generativa (LLMs) en bioinformática y genética, con énfasis en:
+
+- Calidad epistemológica
+- Delimitación de inferencias
+- Verificación de resultados
+
+La sesión establece el **marco conceptual y metodológico** que se usará a lo largo del taller.
+
+
+
+## Agenda
+
+| Tiempo | Actividad |
+|--------|-----------|
+| 0:00–0:15 | Bienvenida y encuadre del taller |
+| 0:15–0:45 | IA generativa: qué es y qué no es (en ciencia) |
+| 0:45–1:15 | Prompting creativo vs científico (discusión guiada) |
+| 1:15–1:30 | Pausa |
+| 1:30–2:15 | Patrones epistemológicos de prompting científico |
+| 2:15–2:50 | Ejercicio A/B/C (análisis crítico de prompts) |
+| 2:50–3:00 | Cierre y takeaways |
+
+
+
+## Marco Epistemológico del Taller
+
+### Sobre este Taller
+
+Este taller introduce el uso **crítico, responsable y científicamente fundamentado** de modelos de IA generativa en ciencias, bioinformática e investigación, con énfasis explícito en **formulación de problemas científicos**, **análisis crítico** y **reproducibilidad**.
+
+::: {.callout-note}
+## Enfoque del Taller
+
+Este taller no introduce la IA como una tecnología de moda, ni como un sustituto del razonamiento científico, sino como:
+
+- Una **herramienta de apoyo cognitivo**
+- Un medio para **estructurar preguntas científicas con rigor**
+- Un espacio para discutir **límites epistemológicos** entre datos, modelos y conclusiones
+
+:::
+
+### ¿Por Qué Este Módulo es Necesario?
+
+Esta sesión introductoria responde a tres necesidades reales en la formación de profesionales científicos y técnicos:
+
+::: {.card-grid}
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-chart-line"></i>
+:::
+::: {.feature-content}
+
+#### Uso Creciente de IA en Investigación
+
+Hoy en día, herramientas basadas en IA se usan para programar, documentar, explorar datos y diseñar análisis. Ignorar su existencia no evita su uso; **enseñar a usarlas críticamente sí reduce errores**.
+
+:::
+:::
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-exclamation-triangle"></i>
+:::
+::: {.feature-content}
+
+#### Riesgo de Confusión
+
+Los modelos generativos producen texto convincente, lo que puede inducir a aceptar conclusiones no verificadas. Este módulo entrena para **distinguir entre texto bien escrito y conocimiento científico válido**.
+
+:::
+:::
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-brain"></i>
+:::
+::: {.feature-content}
+
+#### Preparación Conceptual
+
+Antes de entrenar modelos, es fundamental aprender a formular correctamente los problemas, distinguir predicción de causalidad, y reconocer los límites de los modelos.
+
+:::
+:::
+
+:::
+
+### Conexión con tu práctica científica
+
+Los contenidos de esta sesión introductoria se conectan de forma directa con cualquier flujo de trabajo científico o técnico:
+
+- 🔬 **Diseño de análisis**: formular un prompt científico riguroso es equivalente a definir correctamente un protocolo experimental
+- 📊 **Interpretación de resultados**: evaluar la salida de un modelo requiere los mismos criterios con los que se evalúa cualquier resultado — reproducibilidad, trazabilidad, control de supuestos
+- 🔄 **Buenas prácticas**: el prompting científico es una extensión natural del diseño de pipelines reproducibles y la documentación técnica
+
+
+
+## Mensaje Central del Taller
+
+::: {.callout-important}
+## Principio Fundamental
+
+> *La inteligencia artificial no reemplaza al científico: amplifica tanto sus aciertos como sus errores.*
+
+Por ello, este módulo no enseña a "usar IA", sino a **pensar científicamente en un entorno donde la IA ya existe**.
+
+:::
+
+### La IA: Asistente Cognitivo, No Fuente de Verdad
+
+- La IA **no es una fuente de verdad**, sino un **asistente cognitivo**
+- Produce texto plausible, no conocimiento validado
+- Toda salida debe clasificarse como:
+  - Observación
+  - Inferencia
+  - Especulación
+
+### Qué Cuenta como Evidencia en Bioinformática
+
+::: {.callout-tip}
+## Criterios de Evidencia
+
+- **Bases curadas**: NCBI, RegulonDB, UniProt curated
+- **Evidencia experimental > predicción in silico**
+- **Reproducibilidad** y criterios estadísticos explícitos
+
+:::
+
+
+
+## Prompting: Una Introducción
+
+En esta sesión aprenderás dos enfoques fundamentales para interactuar con IA generativa:
+
+### Dos Tipos de Prompting
+
+::: {.panel-tabset}
+
+## Prompting Creativo
+
+**Abierto, ambiguo, exploratorio**
+
+Útil cuando:
+- No sabes aún qué estás buscando
+- Quieres ampliar el espacio de posibilidades
+- El valor está en la originalidad
+
+Riesgos:
+- Genera respuestas plausibles pero no falsables
+- Favorece la sobreinterpretación
+- No es adecuado para decisiones técnicas
+
+## Prompting Científico
+
+**Contextualizado, acotado, verificable**
+
+Útil cuando:
+- La pregunta está bien definida
+- Necesitas precisión y trazabilidad
+- El resultado debe ser evaluable
+
+Riesgos:
+- Cierra prematuramente el espacio de exploración
+- Reproduce sesgos del marco inicial
+- Limita la emergencia de ideas nuevas
+
+:::
+
+::: {.callout-important}
+## Regla Clave
+
+La elección entre prompting creativo y científico **depende de la fase del proceso cognitivo**:
+
+- **Exploración** → Creativo
+- **Formalización** → Científico
+- **Análisis/Validación** → Científico
+- **Síntesis conceptual** → Mixto
+
+:::
+
+
+
+## Próximos Pasos
+
+En las siguientes secciones exploraremos:
+
+1. [**Prompting Científico**](prompting-cientifico.qmd): Aprenderás la anatomía de un buen prompt, con ejemplos prácticos y ejercicios
+2. [**Patrones Avanzados**](patrones-avanzados.qmd): Técnicas epistemológicas para fortalecer el razonamiento científico
+3. [**Glosario**](glosario.qmd): Términos clave utilizados a lo largo de la sesión
+4. [**Recursos**](recursos.qmd): Materiales adicionales para profundizar
+
+
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Siguiente
+:::
+::: {.chapter-nav-title}
+Prompting Científico
+:::
+:::
+
+:::
+

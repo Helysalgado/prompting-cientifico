@@ -1,0 +1,548 @@
+---
+title: "Patrones Avanzados de Prompting Científico"
+subtitle: "Técnicas epistemológicas para fortalecer el razonamiento"
+date: last-modified
+description: "Patrones reutilizables que fortalecen la calidad epistemológica de los prompts científicos"
+categories: [patrones, epistemología, avanzado]
+---
+
+## Introducción
+
+Este capítulo presenta **patrones avanzados de prompting científico** que ayudan a usar la IA como una herramienta que **fortalece** —y no sustituye— el razonamiento científico.
+
+Estos patrones son **bloques reutilizables** que puedes incorporar en tus prompts para mejorar su calidad epistemológica.
+
+
+
+## Patrón A.1: Separar Pregunta Científica de Tarea al Asistente
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-layer-group"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+En ciencia, primero se define *qué se quiere saber* y después *qué apoyo se solicita*.
+
+**Bloque reutilizable:**
+
+```text
+PREGUNTA CIENTÍFICA:
+(qué fenómeno biológico se desea entender)
+
+TAREA AL ASISTENTE:
+(qué tipo de apoyo se solicita: análisis conceptual, checklist, plan, etc.)
+```
+
+:::
+:::
+
+::: {.callout-important}
+## Mensaje Clave
+
+> *El prompt no es la pregunta científica; es la forma de pedir ayuda para pensarla.*
+
+:::
+
+
+
+## Patrón A.2: Supuestos y Riesgos de Inferencia
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-exclamation-triangle"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+Toda inferencia depende de supuestos que deben hacerse explícitos.
+
+**Bloque reutilizable:**
+
+```text
+SUPUESTOS:
+Enumera los supuestos necesarios para que la respuesta sea válida.
+
+RIESGOS DE INFERENCIA:
+Lista al menos 3 formas en que esta inferencia podría fallar (confusores).
+```
+
+:::
+:::
+
+::: {.callout-important}
+## Mensaje Clave
+
+> *Una conclusión es tan fuerte como los supuestos que la sostienen.*
+
+:::
+
+
+
+## Patrón A.3: Lenguaje Calibrado y Niveles de Certeza
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-balance-scale"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+La ciencia rara vez permite afirmaciones categóricas.
+
+**Instrucciones útiles:**
+
+```text
+Usa lenguaje calibrado ("sugiere", "es compatible con").
+Evita afirmaciones categóricas si la evidencia es observacional.
+```
+
+:::
+:::
+
+::: {.callout-tip}
+## Ejemplos de Lenguaje Calibrado
+
+| ❌ Categórico | ✅ Calibrado |
+|---------------|---------------|
+| "El gen X causa Y" | "El gen X está asociado con Y" |
+| "Esto demuestra que..." | "Estos datos son compatibles con..." |
+| "Siempre ocurre..." | "Frecuentemente se observa..." |
+| "Es imposible que..." | "Es poco probable que..." |
+
+:::
+
+::: {.callout-important}
+## Mensaje Clave
+
+> *El lenguaje científico refleja el nivel de evidencia disponible.*
+
+:::
+
+
+
+## Patrón A.4: Trazabilidad: Hecho vs Inferencia vs Hipótesis
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-tags"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+No todo lo que se escribe tiene el mismo estatus epistemológico.
+
+**Bloque reutilizable:**
+
+```text
+Etiqueta cada afirmación como:
+- HECHO (derivado directamente de datos o fuentes)
+- INFERENCIA (interpretación de los datos)
+- HIPÓTESIS (posible explicación que requiere prueba)
+```
+
+:::
+:::
+
+**Ejemplo de aplicación:**
+
+```text
+- HECHO: El gen lacZ codifica para β-galactosidasa
+- INFERENCIA: La expresión de lacZ aumenta en presencia de lactosa
+- HIPÓTESIS: El aumento puede deberse a cambios en la estabilidad del mRNA
+```
+
+
+
+## Patrón A.5: Contraejemplos y Explicaciones Alternativas
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-random"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+Una hipótesis científica debe sobrevivir a explicaciones alternativas.
+
+**Instrucciones útiles:**
+
+```text
+Propón al menos 2 explicaciones alternativas a la hipótesis principal.
+Describe qué resultados esperaríamos si la hipótesis principal fuera falsa.
+```
+
+:::
+:::
+
+::: {.callout-tip}
+## Ejemplo
+
+**Hipótesis principal:** La sobreexpresión del gen X causa fenotipo Y
+
+**Explicaciones alternativas:**
+1. El fenotipo Y es causado por un gen en el mismo locus
+2. El efecto es indirecto a través de un regulador compartido
+3. Es un artefacto experimental por condiciones de cultivo
+
+:::
+
+
+
+## Patrón A.6: Debugging del Razonamiento
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-bug"></i>
+:::
+::: {.feature-content}
+
+### Analogía
+
+Así como se depura código, se deben depurar inferencias.
+
+**Bloque reutilizable:**
+
+```text
+Revisa tu razonamiento buscando saltos lógicos.
+Identifica supuestos no justificados.
+Reescribe la conclusión con las mínimas afirmaciones soportadas por los datos.
+```
+
+:::
+:::
+
+::: {.callout-warning}
+## Errores Lógicos Comunes
+
+- **Post hoc ergo propter hoc**: B ocurrió después de A, entonces A causó B
+- **Generalización apresurada**: Inferir una regla general de pocos casos
+- **Falsa dicotomía**: Presentar solo dos opciones cuando hay más
+- **Argumento circular**: Usar la conclusión como premisa
+
+:::
+
+
+
+## Patrón A.7: Delimitación Explícita del Universo de Datos
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-database"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+Sin delimitación, la IA tiende a generalizar incorrectamente.
+
+**Especificar cuando sea relevante:**
+- Organismo y ensamblado (ej: *E. coli* K-12 MG1655)
+- Tipo de experimento (RNA-seq, ChIP-seq, GWAS, etc.)
+- Nivel de resolución (gen, transcrito, variante)
+- Unidad de medida (TPM, FPKM, counts)
+
+:::
+:::
+
+**Ejemplo:**
+
+```text
+CONTEXTO:
+Datos de RNA-seq de Homo sapiens (GRCh38).
+Conteos normalizados como TPM.
+Comparación entre tejido sano vs tumor.
+n=5 réplicas biológicas por condición.
+```
+
+
+
+## Patrón A.8: Salidas Listas para Auditoría
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-clipboard-check"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+El conocimiento científico debe ser auditable.
+
+**Formatos recomendados:**
+- Checklist
+- Tablas de decisiones
+- Listas de comandos
+- Criterios explícitos de aceptación/rechazo
+
+:::
+:::
+
+**Ejemplo de salida auditable:**
+
+| Criterio | Método de verificación | Umbral aceptable |
+|----------|------------------------|-------------------|
+| Calidad de lecturas | FastQC | Q30 > 90% |
+| Profundidad | samtools depth | > 30X |
+| Duplicados PCR | Picard MarkDuplicates | < 20% |
+
+
+
+## Patrón A.9: Validación Independiente (Triangulación)
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-check-double"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+Una sola vía de validación rara vez es suficiente.
+
+**Instrucción típica:**
+
+```text
+Propón al menos dos vías independientes para validar estas conclusiones.
+```
+
+:::
+:::
+
+**Ejemplo de triangulación:**
+
+Para validar que el gen X regula Y:
+
+1. **Evidencia transcriptómica**: Coexpresión en múltiples datasets
+2. **Evidencia genómica**: Presencia de sitio de unión en promotor de Y
+3. **Evidencia experimental**: ChIP-seq confirmando unión directa
+
+
+
+## Patrón A.10: Prompt Mínimo vs Prompt de Investigación
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-arrows-alt-h"></i>
+:::
+::: {.feature-content}
+
+### Idea Clave
+
+No todos los prompts requieren el mismo nivel de detalle.
+
+:::
+:::
+
+| Tipo | Uso Principal | Características |
+|------|---------------|-----------------|
+| **Prompt mínimo** | Tareas operativas | Corto, directo, específico |
+| **Prompt de investigación** | Análisis científico | Largo, con supuestos, riesgos y validación |
+
+::: {.callout-tip}
+## Cuándo Usar Cada Uno
+
+**Prompt mínimo:**
+- Consultas rápidas de sintaxis
+- Explicación de conceptos conocidos
+- Tareas repetitivas bien definidas
+
+**Prompt de investigación:**
+- Diseño de experimentos
+- Análisis de resultados complejos
+- Decisiones metodológicas críticas
+
+:::
+
+
+
+## Ejemplos Completos de Prompts Científicos
+
+### Ejemplo A: Análisis de Calidad Previo a RNA-seq
+
+::: {.card .card-primary}
+::: {.card-header}
+Prompt de Investigación Completo
+:::
+::: {.card-body}
+
+```text
+PREGUNTA CIENTÍFICA:
+¿Los datos de RNA-seq disponibles son adecuados para un análisis confiable
+de expresión diferencial?
+
+ROLE:
+Eres un asistente experto en bioinformática con énfasis en análisis reproducible
+de RNA-seq.
+
+CONTEXTO:
+Se dispone de lecturas RNA-seq de un organismo bacteriano.
+No se han evaluado métricas de calidad previamente.
+El objetivo es realizar análisis de expresión diferencial entre dos condiciones.
+
+TAREA AL ASISTENTE:
+Propón un checklist de control de calidad previo al análisis.
+
+SUPUESTOS:
+- Las lecturas provienen del mismo protocolo experimental.
+- No hay información previa de filtrado.
+
+RIESGOS DE INFERENCIA:
+- Sesgos por profundidad de secuenciación.
+- Contaminación o lecturas de baja calidad.
+- Diferencias técnicas entre condiciones.
+
+RESTRICCIONES:
+- No ejecutes código.
+- No inventes valores numéricos.
+- Limítate a razonamiento conceptual.
+
+SALIDA ESPERADA:
+Checklist estructurado con breve justificación por punto.
+
+VERIFICACIÓN:
+Indica cómo un humano puede verificar cada punto usando herramientas estándar
+(FastQC, MultiQC, etc.).
+
+VALIDACIÓN INDEPENDIENTE:
+Propón al menos dos métricas o enfoques distintos para evaluar la calidad global.
+```
+
+:::
+:::
+
+**Por qué es un buen prompt científico:**
+- ✓ Separa claramente pregunta y tarea
+- ✓ Explicita supuestos y riesgos
+- ✓ Produce una salida auditable
+- ✓ No induce conclusiones categóricas
+
+
+
+### Ejemplo B: Priorización de Variantes Post-GWAS
+
+::: {.card .card-info}
+::: {.card-header}
+Prompt Avanzado con Todos los Patrones
+:::
+::: {.card-body}
+
+```text
+PREGUNTA CIENTÍFICA:
+¿Cómo priorizar variantes genéticas asociadas a una enfermedad compleja
+para estudios funcionales?
+
+ROLE:
+Actúa como bioinformático senior con experiencia en genética humana y GWAS.
+
+CONTEXTO:
+Se cuenta con un conjunto de SNPs asociados a una enfermedad compleja obtenidos
+de un GWAS. No se dispone aún de evidencia funcional directa.
+
+TAREA AL ASISTENTE:
+Propón un marco de priorización de variantes basado en criterios biológicos
+y estadísticos.
+
+SUPUESTOS:
+- Las asociaciones provienen de un GWAS bien controlado.
+- La enfermedad tiene un componente poligénico.
+
+RIESGOS DE INFERENCIA:
+- Confundir asociación con causalidad.
+- Sobreinterpretar efectos individuales.
+- Ignorar factores poblacionales.
+
+RESTRICCIONES:
+- No afirmes causalidad.
+- Usa lenguaje calibrado.
+- Declara explícitamente las limitaciones.
+
+SALIDA ESPERADA:
+Tabla con criterios de priorización y justificación.
+
+VERIFICACIÓN:
+Describe cómo cada criterio puede validarse con datos independientes
+(eQTL, anotaciones regulatorias, estudios funcionales).
+
+VALIDACIÓN INDEPENDIENTE:
+Propón al menos dos tipos de datos adicionales que fortalecerían la priorización.
+```
+
+:::
+:::
+
+**Por qué es un buen prompt científico:**
+- ✓ Evita determinismo genético
+- ✓ Diferencia claramente predicción y explicación
+- ✓ Promueve triangulación de evidencia
+
+
+
+## Resumen de Patrones
+
+::: {.callout-tip}
+## Checklist de Patrones Avanzados
+
+Antes de enviar un prompt científico importante, verifica:
+
+- [ ] **A.1**: ¿Separé la pregunta científica de la tarea al asistente?
+- [ ] **A.2**: ¿Explicité supuestos y riesgos?
+- [ ] **A.3**: ¿Usé lenguaje calibrado apropiado?
+- [ ] **A.4**: ¿Distinguí hecho, inferencia e hipótesis?
+- [ ] **A.5**: ¿Incluí explicaciones alternativas?
+- [ ] **A.6**: ¿Revisé el razonamiento por saltos lógicos?
+- [ ] **A.7**: ¿Delimité claramente el universo de datos?
+- [ ] **A.8**: ¿La salida es auditable?
+- [ ] **A.9**: ¿Propuse vías de validación independiente?
+- [ ] **A.10**: ¿Elegí el nivel de detalle apropiado?
+
+:::
+
+
+
+## Mensaje Final
+
+::: {.callout-important}
+## Reflexión Final
+
+> *Un buen prompt científico no busca respuestas rápidas, sino **razonamiento defendible**.*
+
+La IA es una herramienta poderosa cuando se usa con criterio científico. Estos patrones te ayudan a:
+
+- Mantener el control epistemológico
+- Distinguir texto convincente de conocimiento válido
+- Producir resultados verificables y reproducibles
+- Fortalecer tu razonamiento científico
+
+:::
+
+
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-prev}
+::: {.chapter-nav-label}
+Anterior
+:::
+::: {.chapter-nav-title}
+Prompting Científico
+:::
+:::
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Siguiente
+:::
+::: {.chapter-nav-title}
+Glosario
+:::
+:::
+
+:::
+

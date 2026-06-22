@@ -1,0 +1,257 @@
+---
+title: "Recursos"
+subtitle: "Herramientas, lecturas y materiales de apoyo"
+date: last-modified
+description: "Recursos esenciales para el curso: herramientas de IA, lecturas recomendadas y material del caso de estudio"
+---
+
+::: {.callout-tip}
+## Asistente de Prompting Científico
+
+GPT personalizado para este curso. Te guía por los siete componentes del prompt paso a paso. Requiere cuenta de ChatGPT (plan gratuito es suficiente).
+
+<a href="https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente" class="btn btn-primary" target="_blank">
+<i class="fas fa-robot"></i> &nbsp; Abrir asistente
+</a>
+&nbsp;
+<a href="../prereqs.qmd" class="btn btn-outline">
+<i class="fas fa-gear"></i> &nbsp; Cómo configurarlo
+</a>
+:::
+
+---
+
+## Herramientas del curso
+
+::: {.card-grid}
+
+::: {.card .card-primary}
+::: {.card-body}
+
+#### <i class="fas fa-robot"></i> Asistente de Prompting Científico
+
+GPT personalizado para este curso. Te guía por los siete componentes del prompt paso a paso.
+
+Úsalo en los Módulos 2–4 para diseñar prompts por fases. Recuerda: **la Fase 5 (juicio científico) es tuya**.
+
+[Abrir asistente →](https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente){target="_blank"}
+
+:::
+:::
+
+::: {.card .card-info}
+::: {.card-body}
+
+#### <i class="fas fa-comments"></i> Herramientas de IA conversacional
+
+Para los ejercicios del curso puedes usar cualquiera de estas:
+
+- [ChatGPT](https://chatgpt.com){target="_blank"} (OpenAI)
+- [Claude](https://claude.ai){target="_blank"} (Anthropic)
+- [Gemini](https://gemini.google.com){target="_blank"} (Google)
+
+Documenta siempre: **producto**, **versión** y si usas **chat web** o **API**.
+
+:::
+:::
+
+:::
+
+---
+
+## Lecturas esenciales
+
+### Prompting y LLMs
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### Sahoo et al. (2024)
+
+**A Systematic Survey of Prompt Engineering in Large Language Models**
+
+Revisión sistemática de técnicas de prompting: zero-shot, few-shot, chain-of-thought y variantes. Punto de entrada sólido para entender el campo.
+
+[arXiv:2402.07927 →](https://arxiv.org/abs/2402.07927){target="_blank"}
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Schulhoff et al. (2024)
+
+**The Prompt Report: A Systematic Survey of Prompting Techniques**
+
+El catálogo más completo de técnicas de prompting hasta la fecha. Útil como referencia para el diseño de protocolos del Módulo 4.
+
+[arXiv:2406.06608 →](https://arxiv.org/abs/2406.06608){target="_blank"}
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Wei et al. (2022)
+
+**Chain-of-Thought Prompting Elicits Reasoning in Large Language Models**
+
+El paper que formalizó el razonamiento paso a paso en LLMs. Relevante para entender cómo la estructura del prompt cambia el tipo de inferencia.
+
+[arXiv:2201.11903 →](https://arxiv.org/abs/2201.11903){target="_blank"}
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Thirunavukarasu et al. (2023)
+
+**Large Language Models in Medicine** — *Nature Medicine*
+
+Analiza alcances y riesgos del uso de LLMs en biomedicina. Refuerza por qué la verificación humana es no negociable en ciencia.
+
+[Nature Medicine →](https://doi.org/10.1038/s41591-023-02448-8){target="_blank"}
+
+:::
+:::
+
+:::
+
+### Fundamentos del modelo
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### Brown et al. (2020)
+
+**Language Models are Few-Shot Learners** (GPT-3)
+
+El paper que mostró que los LLMs pueden aprender tareas con pocos ejemplos en el prompt. Base conceptual del Módulo 1.
+
+[arXiv:2005.14165 →](https://arxiv.org/abs/2005.14165){target="_blank"}
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Christiano et al. (2017)
+
+**Deep Reinforcement Learning from Human Feedback**
+
+El paper fundacional de RLHF. Explica por qué los modelos alineados tienden a la complacencia. Clave para el Módulo 1 — Sección 3.
+
+[arXiv:1706.03741 →](https://arxiv.org/abs/1706.03741){target="_blank"}
+
+:::
+:::
+
+:::
+
+---
+
+## Recursos visuales
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### The Illustrated GPT-2
+
+Jay Alammar. Explicación visual del funcionamiento interno de los transformers sin carga matemática. Complemento ideal para el Módulo 1.
+
+[jalammar.github.io →](https://jalammar.github.io/illustrated-gpt2/){target="_blank"}
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Ecosistema de IA Generativa
+
+Diagrama conceptual de los componentes del ecosistema IA generativa: modelos, productos y aplicaciones.
+
+[madsblog.net →](https://madsblog.net/2025/01/06/generative-ai-conceptos-clave/){target="_blank"}
+
+:::
+:::
+
+:::
+
+---
+
+## En español
+
+::: {.card-grid}
+
+::: {.card .card-success}
+::: {.card-body}
+
+#### Prompt Engineering Guide
+
+DAIR.AI. Guía práctica de técnicas de prompting disponible en español. Incluye ejemplos aplicados y referencia de técnicas por tipo de tarea.
+
+[promptingguide.ai/es →](https://www.promptingguide.ai/es){target="_blank"}
+
+:::
+:::
+
+::: {.card .card-success}
+::: {.card-body}
+
+#### Manual de Buenas Prácticas en la Escritura de Prompts
+
+Quintero-Barrent, López de Ramos & Esteves González (2025). Manual en español orientado a la escritura rigurosa de prompts.
+
+ISBN 978-9962-8606-5-5
+
+:::
+:::
+
+:::
+
+---
+
+## Material del caso MalT
+
+Archivos del caso de estudio del Módulo 4 (*E. coli* — regulón de maltosa).
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### Artículo original
+
+Schwartz & Beckwith (1982). Texto fuente del caso MalT usado en el protocolo multi-fase.
+
+- [PubMed — PMID 6325162 →](https://pubmed.ncbi.nlm.nih.gov/6325162/){target="_blank"}
+- [Texto completo — PMC553051 →](https://pmc.ncbi.nlm.nih.gov/articles/PMC553051/){target="_blank"}
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Notebook del caso MalT
+
+Jupyter notebook con el protocolo completo de cinco fases aplicado al caso MalT.
+
+[Descargar notebook →](../chapters/capitulo4/files/Prompting_Cientifico_Caso_MalT.ipynb)
+
+:::
+:::
+
+:::

@@ -1,0 +1,157 @@
+---
+title: "Glosario de Términos"
+subtitle: "Conceptos clave de IA generativa y prompting científico"
+date: last-modified
+description: "Definiciones de términos técnicos utilizados en la sesión"
+categories: [glosario, referencia, terminología]
+---
+
+## Introducción
+
+Este glosario define los conceptos clave utilizados a lo largo de la sesión. Los términos se presentan en orden temático para facilitar la comprensión.
+
+
+## Alucinación
+
+Respuesta generada por un modelo de lenguaje que presenta información incorrecta, inventada o no verificable, pero con apariencia de coherencia.
+
+Las alucinaciones no implican intención ni error consciente; son consecuencia del proceso probabilístico de generación de texto.
+
+---
+
+## Chatbot
+
+Interfaz conversacional que permite interactuar con un modelo de lenguaje mediante intercambio de mensajes.
+
+Un chatbot no es el modelo en sí, sino el sistema que gestiona la conversación, el historial y la presentación de las respuestas.
+
+---
+
+## Contexto
+
+Información que delimita el universo de referencia sobre el cual el modelo construirá su respuesta.
+
+Reduce ambigüedad y acota el espacio de interpretaciones posibles.
+
+---
+
+## Embeddings
+
+Representaciones numéricas (vectores) que codifican tokens o fragmentos de texto en un espacio matemático.
+
+Permiten que el modelo transforme texto en estructuras que pueden ser procesadas mediante operaciones matemáticas. Tokens con significados similares tienden a ubicarse en regiones cercanas del espacio de embeddings.
+
+---
+
+## Generación autoregresiva
+
+Proceso mediante el cual el modelo genera una secuencia de texto prediciendo cada token en función de los tokens previamente generados y del contexto inicial.
+
+---
+
+## IA generativa
+
+Conjunto de modelos de inteligencia artificial capaces de producir contenido (texto, código, imágenes, etc.) a partir de patrones aprendidos en grandes volúmenes de datos.
+
+En este curso, el término se refiere específicamente a modelos de lenguaje generativos.
+
+---
+
+## LLM (Large Language Model)
+
+Modelo de lenguaje entrenado con grandes volúmenes de texto que aprende patrones estadísticos del lenguaje y puede generar texto coherente, responder preguntas y asistir en tareas cognitivas.
+
+No valida conocimiento científico ni razona de manera deliberativa: modela probabilidades condicionadas al contexto.
+
+---
+
+## Modelos de Lenguaje Grande (LLM) conocidos
+
+Ejemplos de LLM ampliamente utilizados incluyen:
+
+- GPT (OpenAI)  
+- Claude (Anthropic)  
+- Gemini (Google)  
+- Llama (Meta)  
+
+Estos modelos difieren en arquitectura, tamaño, entrenamiento y políticas de uso, pero comparten el principio general de generación autoregresiva de texto.
+
+---
+
+## Modelo de Lenguaje (Language Model)
+
+Sistema entrenado para predecir la siguiente unidad de texto (token) en una secuencia dada.
+
+---
+
+## Probabilidad condicional $P(y | x)$
+
+Expresión que representa la probabilidad de una salida $y$ dado un contexto $x$.
+
+En modelos de lenguaje, indica que la respuesta generada depende del prompt y del texto previo.
+
+---
+
+## Prompt
+
+Instrucción escrita que define una tarea para un modelo de lenguaje.
+
+En este curso, un prompt se entiende como una configuración estructurada de condiciones (rol, contexto, tarea, restricciones y formato de salida).
+
+---
+
+## Restricciones
+
+Condiciones que delimitan el alcance, profundidad, formato o límites interpretativos de la respuesta.
+
+Contribuyen a reducir ambigüedad y mejorar la evaluabilidad.
+
+---
+
+## Riesgo epistemológico
+
+Grado en que una respuesta generada puede inducir interpretaciones no justificadas o sobre-extensiones inferenciales.
+
+Se relaciona con el tipo de tarea solicitada y con la ausencia de delimitaciones explícitas.
+
+---
+
+## Rol
+
+Componente del prompt que define la función operativa que el modelo debe asumir.
+
+No es una etiqueta profesional genérica, sino una descripción concreta de la función que se desempeña dentro de una fase del proceso científico.
+
+---
+
+## Salida esperada
+
+Especificación del formato o estructura en que debe presentarse la respuesta.
+
+No mejora el razonamiento del modelo, pero facilita la claridad y revisión crítica del contenido generado.
+
+---
+
+## Tarea
+
+Operación específica que se solicita al modelo (por ejemplo: describir, comparar, analizar, evaluar).
+
+El verbo utilizado define el tipo de transformación aplicada a la información.
+
+---
+
+## Temperatura
+
+Parámetro que controla la variabilidad en la generación de texto.
+
+Valores bajos producen respuestas más deterministas y consistentes con las opciones más probables.  
+Valores altos aumentan la diversidad, pero no garantizan mayor calidad ni corrección científica.
+
+---
+
+## Token
+
+Unidad mínima de texto que procesa un modelo de lenguaje.
+
+Puede corresponder a una palabra completa, parte de una palabra o un símbolo.  
+Los modelos generan texto token por token.

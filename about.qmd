@@ -1,0 +1,125 @@
+---
+title: "Acerca del curso"
+subtitle: "Prompting Científico con Inteligencia Artificial"
+date: last-modified
+description: "Información sobre el curso, agradecimientos, contacto y licencia"
+---
+
+## Sobre este curso
+
+*Prompting Científico con Inteligencia Artificial* es un taller de formación académica dirigido a estudiantes e investigadores en bioinformática, genómica y áreas afines. Su objetivo es desarrollar la capacidad de interactuar con sistemas de IA de manera rigurosa, reproducible y metodológicamente fundamentada.
+
+El curso no enseña trucos de redacción ni plantillas rápidas: forma criterio. Parte de la pregunta epistemológica central — *¿qué tipo de afirmación estás produciendo y con qué justificación puede sostenerse?* — y construye desde ahí un marco de diseño, evaluación e iteración de prompts aplicable a contextos científicos reales.
+
+El material está organizado en cuatro módulos (16 horas) y un conjunto de apéndices de referencia rápida, y se apoya en un caso de estudio continuo: el regulón de maltosa de *E. coli*.
+
+---
+
+## Agradecimientos
+
+::: {.card .card-primary}
+::: {.card-body}
+
+Este curso fue desarrollado con el apoyo del proyecto:
+
+**PAPIIT IF202226**
+*Plataforma de asistentes conversacionales para investigación y formación académica basada en IA generativa*
+
+Financiado por la **Dirección General de Asuntos del Personal Académico (DGAPA)**
+de la **Universidad Nacional Autónoma de México (UNAM)**.
+
+<div style="display: flex; align-items: center; gap: 2rem; margin-top: 1.5rem;">
+<img src="https://www.unam.mx/sites/default/files/logos/unam_logo_azul.png" alt="UNAM" style="height: 60px;">
+<img src="https://dgapa.unam.mx/images/logo_dgapa.png" alt="DGAPA" style="height: 50px;">
+</div>
+
+:::
+:::
+
+---
+
+## Autora y contacto
+
+::: {.card}
+::: {.card-body}
+
+<div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+
+<div style="flex-shrink: 0;">
+<img src="assets/images/instructor-photo.png" alt="Heladia Salgado" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover;">
+</div>
+
+<div>
+
+### Heladia Salgado Osorio
+
+**Lic. en Informática**
+Centro de Ciencias Genómicas, UNAM — Cuernavaca, México
+
+Técnica Académica y docente en bioinformática y análisis computacional. Su trabajo se centra en el diseño de procesos reproducibles, el prompting científico y la formación de criterio para el uso responsable de la IA en investigación y educación.
+
+<div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+<a href="mailto:heladia@ccg.unam.mx" class="btn btn-outline btn-sm">
+<i class="fas fa-envelope"></i> heladia@ccg.unam.mx
+</a>
+<a href="https://www.ccg.unam.mx/heladia-salgado-osorio/" class="btn btn-outline btn-sm" target="_blank">
+<i class="fas fa-globe"></i> Perfil institucional
+</a>
+<a href="https://www.linkedin.com/in/heladia-salgado-bb122954/" class="btn btn-outline btn-sm" target="_blank">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+<a href="https://github.com/Helysalgado" class="btn btn-outline btn-sm" target="_blank">
+<i class="fab fa-github"></i> GitHub
+</a>
+</div>
+
+</div>
+</div>
+
+:::
+:::
+
+---
+
+## Cómo citar este curso
+
+Si utilizas este material en tu docencia o investigación, por favor cita de la siguiente manera:
+
+::: {.callout-note}
+## Formato de cita
+
+**APA:**
+
+Salgado Osorio, H. (2026). *Prompting Científico con Inteligencia Artificial*. Centro de Ciencias Genómicas, UNAM. Proyecto PAPIIT IF202226. https://github.com/Helysalgado/prompting-cientifico
+
+**BibTeX:**
+
+```bibtex
+@misc{salgado2026prompting,
+  author       = {Salgado Osorio, Heladia},
+  title        = {Prompting Cient{\'i}fico con Inteligencia Artificial},
+  year         = {2026},
+  institution  = {Centro de Ciencias Gen{\'o}micas, {UNAM}},
+  note         = {Proyecto {PAPIIT} {IF202226}},
+  url          = {https://github.com/Helysalgado/prompting-cientifico}
+}
+```
+
+:::
+
+---
+
+## Licencia
+
+::: {.callout-note}
+
+Este curso se distribuye bajo la licencia
+[Creative Commons Atribución 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es).
+
+Puedes compartir, adaptar y utilizar el material — incluso con fines comerciales — siempre que otorgues el crédito correspondiente e indiques si realizaste cambios.
+
+<a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">
+<img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0" style="margin-top: 0.5rem;">
+</a>
+
+:::

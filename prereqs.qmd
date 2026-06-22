@@ -1,0 +1,114 @@
+---
+title: "Antes de comenzar"
+subtitle: "Configura tus herramientas antes de la primera sesión"
+date: last-modified
+description: "Qué cuentas necesitas, si el plan gratuito es suficiente y cómo acceder al Asistente del curso"
+---
+
+::: {.callout-tip}
+## Prepara esto antes de la primera sesión
+
+Necesitas **al menos una cuenta** en una herramienta de IA conversacional. Lo ideal es tener dos para los ejercicios comparativos del Módulo 1.
+
+**Tiempo estimado de configuración:** 10–15 minutos.
+:::
+
+---
+
+## ¿Cuántas cuentas necesitas?
+
+| | Mínimo | Recomendado |
+|---|---|---|
+| **Cuentas** | 1 (ChatGPT) | 2 (ChatGPT + Claude) |
+| **Plan** | Gratuito | Gratuito en ambas |
+| **Por qué ChatGPT es obligatorio** | El Asistente del curso es un GPT personalizado que solo funciona con cuenta de ChatGPT | — |
+
+---
+
+## ¿Es suficiente el plan gratuito?
+
+**Sí**, para la mayoría de los ejercicios del curso. Pero debes saber los límites:
+
+::: {.panel-tabset}
+
+## ChatGPT (OpenAI)
+
+**Plan gratuito — lo que incluye:**
+
+- Modelo: **GPT-4o** con límite dinámico (~15–40 mensajes por ventana de 3 horas)
+- Cuando alcanzas el límite: cambia automáticamente a **GPT-4o mini** (sin límite)
+- Acceso a **GPTs personalizados**, incluyendo el Asistente del curso ✅
+- Sin acceso a memoria persistente ni a herramientas avanzadas (código, imágenes)
+
+**Para el curso:** suficiente. Si llegas al límite durante una sesión larga, espera 3 horas o continúa con GPT-4o mini.
+
+[Crear cuenta en ChatGPT →](https://chatgpt.com){target="_blank"}
+
+## Claude (Anthropic)
+
+**Plan gratuito — lo que incluye:**
+
+- Modelo: **Claude 3.5 Haiku** con límite dinámico (~15–40 mensajes por ventana de 5 horas)
+- El límite depende de la longitud de los mensajes: conversaciones largas agotan el cupo más rápido
+- Restablecimiento: 4–8 horas tras alcanzar el límite
+
+**Para el curso:** suficiente para los ejercicios de comparación del Módulo 1 y práctica individual. Evita pegar textos muy largos si quieres conservar el cupo.
+
+[Crear cuenta en Claude →](https://claude.ai){target="_blank"}
+
+## Gemini (Google)
+
+**Plan gratuito — lo que incluye:**
+
+- Modelo: **Gemini 2.0 Flash** con ~30 prompts por día (sistema nuevo desde mayo 2026)
+- Los límites se calculan por recursos computacionales, no solo por mensajes
+- Restablecimiento parcial cada 5 horas
+
+**Para el curso:** suficiente como tercera opción para comparar estilos de respuesta. No es el más generoso en plan gratuito actualmente.
+
+[Crear cuenta en Gemini →](https://gemini.google.com){target="_blank"}
+
+:::
+
+---
+
+## El Asistente del curso
+
+El curso tiene un **GPT personalizado** que te guía por los siete componentes del prompt paso a paso. Es especialmente útil en los Módulos 2, 3 y 4.
+
+::: {.callout-important}
+## Requiere cuenta de ChatGPT (gratuita)
+
+El asistente está construido sobre ChatGPT. Necesitas iniciar sesión con tu cuenta de OpenAI para usarlo — el plan gratuito es suficiente.
+:::
+
+<div style="text-align: center; margin: 2rem 0;">
+<a href="https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente" class="btn btn-primary" target="_blank">
+<i class="fas fa-robot"></i> &nbsp; Abrir Asistente de Prompting Científico
+</a>
+</div>
+
+**Cómo usarlo:**
+
+1. Haz clic en el botón de arriba (o búscalo como *"Asistente de Prompting Científico modo docente"* en ChatGPT)
+2. Inicia sesión con tu cuenta de OpenAI si no lo has hecho
+3. Describe tu tarea o pide que te guíe por los componentes del prompt
+
+::: {.callout-warning}
+## Fase 5 — Juicio científico
+
+El asistente puede ayudarte a estructurar el prompt y revisar cada componente, pero **no puede hacer el juicio científico final por ti**. La evaluación de si la respuesta es válida, suficiente o correcta en tu contexto es responsabilidad tuya.
+:::
+
+---
+
+## Lista de verificación
+
+Antes de la primera sesión confirma que tienes:
+
+- [ ] Cuenta activa en **ChatGPT** (gratuita)
+- [ ] Puedes abrir el [Asistente de Prompting Científico](https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente){target="_blank"}
+- [ ] (Recomendado) Cuenta activa en **Claude** (gratuita)
+- [ ] Computadora con acceso a internet estable
+- [ ] Editor de texto o IDE donde documentar tus prompts y respuestas
+

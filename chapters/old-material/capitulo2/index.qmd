@@ -1,0 +1,1015 @@
+---
+title: "Prompting Científico"
+subtitle: "Anatomía y práctica del prompt verificable"
+date: last-modified
+description: "Aprende a formular prompts científicos con estructura, contexto y criterios de verificación"
+categories: [prompting, metodología, ciencia]
+format:
+  html:
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+    include-in-header:
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+          <script>mermaid.initialize({ startOnLoad: true });</script>
+---
+
+## Antes de comenzar
+
+En el Módulo 1 aprendiste a ver el prompt como una **variable de control**: un conjunto de condiciones que restringen la distribución de probabilidad del modelo y condicionan el tipo de texto que produce. Viste que cambiar el rol, el contexto o la tarea produce respuestas radicalmente distintas — incluso con el mismo modelo.
+
+Aquí la pregunta cambia:
+
+> ¿Cómo saber si lo que produjo el modelo **puede evaluarse**?
+
+Un prompt bien redactado puede generar una respuesta fluida, coherente y completamente inverificable. Este módulo te enseña a diseñar prompts que no solo produzcan respuestas, sino que las hagan **examinables por criterios externos**.
+
+La diferencia no está en la calidad de la redacción. Está en si el diseño del prompt habilita — o impide — que tú puedas juzgar lo que recibiste.
+
+## Introducción
+
+En el **Capítulo 1** se definió el *prompt* como la **instrucción (y el contexto) que condiciona** la generación del modelo — el contexto \(x\) en \(P(y \mid x)\) — y delimita su salida. En este capítulo damos el siguiente paso metodológico: **cómo convertir esa instrucción en un instrumento científicamente evaluable**.
+
+Aquí se introduce el **prompting científico**, entendido como el diseño de prompts **contextualizados, acotados y verificables**, orientados a producir salidas **controlables, reproducibles y evaluables por criterios externos**. Este capítulo no asume que la IA valide conocimiento; por el contrario, establece **cómo el diseño del prompt habilita la verificación humana** [@sahoo2024]. En dominios biomédicos, la fluidez del modelo no sustituye validación experimental [@thirunavukarasu2023].
+
+Este enfoque articula cuatro competencias del curso:   
+
+- **2.1 Prompting Científico** (diseño de instrucciones justificadas),
+- **2.2 Pensamiento Crítico** (evaluar y cuestionar salidas),
+- **2.3 Metodología y Rigor** (reproducibilidad y trazabilidad),
+- **2.4 Desarrollo Asistido por IA** (uso metodológico en proyectos técnicos).
+
+
+
+## Prompting Creativo vs Científico: Comparación Detallada
+
+### 🧠 Prompting Creativo
+
+> Abierto, ambiguo, exploratorio
+
+**Es bueno aplicarlo cuando:**
+
+1. **No sabes aún qué estás buscando**
+   - Fase de ideas o lluvia de ideas
+   - Generación de hipótesis o metáforas
+
+2. **Quieres ampliar el espacio de posibilidades**
+   - Diseño conceptual, narrativas, enfoques alternativos
+   - Útil para romper marcos rígidos o sesgos previos
+
+3. **El valor está en la originalidad, no en la verificabilidad inmediata**
+   - Ensayos teóricos, pensamiento especulativo, divulgación, docencia creativa
+
+4. **Trabajas con sistemas complejos mal definidos**
+   - Sistemas biológicos, sociales o simbólicos aún no formalizados
+
+
+**Ejemplo**:
+
+```txt {.prompt}
+Explora analogías entre regulación genética y lenguajes simbólicos.
+```
+
+::: {.callout-warning}
+
+## Riesgos del Prompting Creativo
+
+- Produce respuestas plausibles sin explicitar los supuestos ni las condiciones bajo las cuales podrían refutarse.
+- Favorece la sobreinterpretación y analogías engañosas
+- No es adecuado para decisiones técnicas o conclusiones formales
+
+:::
+
+
+
+### 🔬 Prompting Científico
+
+> Contextualizado, acotado, verificable
+
+**Es bueno aplicarlo cuando:**
+
+1. **La pregunta está bien definida**
+   - Variables claras, dominio específico, objetivo explícito
+
+2. **Necesitas precisión, trazabilidad y control de supuestos**
+   - Revisión de literatura, análisis de datos, validación de hipótesis
+
+3. **El resultado debe ser evaluable por criterios externos**
+   - Reproducibilidad, referencias, consistencia lógica, datos observables
+
+4. **Estás en fase de convergencia**
+   - Refinar, comparar, decidir, escribir resultados, diseñar experimentos
+
+**Ejemplo**:
+
+```txt {.prompt}
+Resume de manera estructurada los mecanismos de regulación transcripcional del operón lac en Escherichia coli de acuerdo con la información curada en RegulonDB. Incluye:
+
+- Factores regulatorios involucrados  
+- Sitios de unión en el DNA  
+- Señales ambientales  
+- Mecanismo molecular de acción  
+- Integración regulatoria del sistema  
+
+```
+
+
+#### Limitaciones del Prompting Científico
+
+- Puede **reducir el espacio de exploración** si se aplica demasiado pronto.
+- Puede **heredar sesgos** del contexto, supuestos y fuentes seleccionadas.
+- Puede generar una **falsa sensación de rigor** si “verificación” se formula de manera **retórica y no operativa**.
+
+
+
+## Guía de Decisión
+
+| Fase del Trabajo | → Tipo de Prompting |
+|------------------|---------------------|
+| Exploración | → Creativo |
+| Generación de hipótesis | → Creativo → Científico |
+| Formalización | → Científico |
+| Análisis / validación | → Científico |
+| Síntesis conceptual | → Mixto |
+| Comunicación (según audiencia) | → Creativo o Mixto |
+
+
+
+
+### Criterio práctico rápido
+
+Antes de escribir un prompt, pregúntate:
+
+**¿Busco sorprenderme o comprobar algo?**
+
+- Sorprenderme → Prompting creativo  
+- Comprobar, justificar, medir → Prompting científico
+
+
+
+
+## Ejemplos Prácticos: Creativo vs Científico
+
+Los siguientes ejemplos pares ilustran el cambio central del capítulo: pasar de prompts que maximizan exploración a prompts que **acotan el tipo de afirmación** y habilitan evaluación externa.
+
+### Regulación Genética
+
+::: {.panel-tabset}
+
+## Prompt Creativo
+
+```txt {.prompt}
+Imagina la regulación genética como un sistema de toma de decisiones.
+
+¿Qué metáforas o estructuras abstractas ayudan a entender cómo una célula
+elige entre múltiples programas de expresión?
+```
+
+**Uso**: Exploración conceptual, generación de analogías para enseñanza
+
+## Prompt Científico
+
+```txt {.prompt}
+Describe los mecanismos de regulación transcripcional dependientes de
+factores sigma en E. coli, indicando condiciones de activación y genes regulados,
+según la evidencia experimental reportada.
+```
+
+**Uso**: Revisión técnica, preparación de materiales de curso
+
+:::
+
+### Expresión diferencial (RNA-seq)
+
+::: {.panel-tabset}
+
+## Prompt creativo
+
+```txt {.prompt}
+Si la expresión diferencial fuera un lenguaje de estados celulares,
+¿qué patrones podrían emerger entre tejido sano y canceroso?
+```
+
+
+## Prompt Científico
+
+```txt {.prompt}
+Describe conceptualmente cómo se analiza expresión diferencial
+entre leucemia y controles con RNA-seq, sin ejecutar código.
+```
+:::
+
+### Interpretación de resultados ómicos
+
+::: {.panel-tabset}
+
+## Prompt Creativo
+
+```txt {.prompt}
+Explora narrativas funcionales que conecten genes sobreexpresados
+con procesos adaptativos celulares.
+```
+
+## Prompt Científico
+
+```txt {.prompt}
+Propón un análisis de enriquecimiento GO (BP) para genes sobreexpresados,
+indicando criterios de significancia y verificación.
+```
+:::
+
+## Anatomía de un Buen Prompt Científico
+
+Un **prompt científico** funciona como un **protocolo experimental escrito**: explicita *qué se quiere*, *bajo qué supuestos* y *cómo se evaluará*. 
+
+En el Capítulo 1 trabajamos con cinco componentes (Rol, Contexto, Tarea, Restricciones y Salida esperada).
+En este capítulo incorporamos dos componentes adicionales: **Alcance**, que delimita el dominio y nivel del análisis, y **Verificación**, que especifica cómo un humano evaluará la confiabilidad de la respuesta. El prompt científico completo opera con **siete componentes**.
+
+
+
+En los próximos apartados exploramos cada uno en detalle. Al terminar, encontrarás una tabla de síntesis que los integra.
+
+#### ROLE — Rol de la IA
+
+Define explícitamente desde qué marco epistemológico debe razonar el modelo.
+
+**Por qué es crucial:**  
+
+Un LLM tiende a generar respuestas útiles y fluidas por defecto.  
+El rol fuerza un tipo específico de razonamiento: crítico, metodológico, estadístico, teórico, etc.
+
+**Qué controla:**   
+- Nivel de profundidad.  
+- Tipo de lenguaje (exploratorio vs concluyente).  
+- Enfoque (evaluación, diseño experimental, síntesis conceptual).  
+
+
+```txt {.prompt}
+Actúa como profesor de biología molecular a nivel licenciatura.
+Analiza el diseño experimental de este estudio sobre expresión génica diferencial.
+
+vs 
+
+Actúa como revisor experto para una revista internacional de genómica funcional.
+Analiza el diseño experimental de este estudio sobre expresión génica diferencial.
+```
+
+
+#### CONTEXTO — (Context Injection / Grounding) 
+
+(Es el marco factual/hechos.)
+
+El contexto no solo indica de qué tema se habla, sino también qué información hay disponible:
+
+- Qué datos hay  
+- Qué experimento se hizo  
+- Qué variables se midieron  
+- En qué condiciones  
+- Con qué metodología  
+
+**Por qué es crucial:**  
+
+El modelo rellena vacíos cuando el contexto es ambiguo.  
+Más contexto = menos espacio para inferencias inventadas.
+
+**Qué controla:**
+
+- Supuestos implícitos.
+- Interpretaciones fuera de dominio.
+- Generalizaciones indebidas.
+
+**Qué error mitiga:**  
+Alucinaciones contextuales y suposiciones no justificadas.
+
+
+#### ALCANCE — (Delimitación estructural del análisis)
+
+Define el dominio y el nivel en el que será tratado el problema.
+
+Delimita:
+
+- Qué dimensión del fenómeno se analizará.
+- En qué nivel (estadístico, metodológico, conceptual, mecanístico).
+- Qué tipo de evidencia es pertinente considerar.
+- Hasta qué población o sistema aplica el análisis.
+
+El alcance establece la frontera estructural del razonamiento.
+
+**Qué error mitiga:**  
+Expansión temática y desplazamiento a niveles no solicitados.
+
+
+```txt {.prompt}
+ROLE:
+Revisor metodológico experto.
+
+TAREA:
+Evalúa críticamente los resultados.
+
+CONTEXTO:
+Análisis de expresión diferencial por RNA-seq con 3 replicados por condición.
+
+ALCANCE:
+Limita tus conclusiones a asociaciones estadísticas.
+No infieras mecanismos regulatorios no evaluados experimentalmente.
+No generalices más allá de la muestra.
+...
+...
+
+```
+
+
+#### TAREA — Instrucción central   
+Debe ser evaluable.   
+- *Describe* ≠ *analiza* ≠ *decide*.
+
+En el diseño de un prompt científico, **el verbo utilizado no es un detalle estilístico**, 
+sino una señal explícita del **tipo de inferencia** que se espera del modelo. Verbos distintos 
+activan operaciones cognitivas diferentes y, por lo tanto, implican **niveles distintos de riesgo epistemológico**.
+
+Por ejemplo, no es equivalente pedir que un modelo describa un fenómeno biológico que pedirle que lo interprete o que decida entre hipótesis alternativas.
+
+##### Clasificación de verbos en investigación según nivel de inferencia y riesgo epistemológico
+
+En el diseño de prompts científicos, el verbo define la operación cognitiva esperada y el nivel de compromiso epistemológico de la respuesta. La siguiente tabla clasifica verbos comunes en investigación según su nivel de inferencia y el riesgo asociado a su uso impreciso.
+
+|  Nivel | Verbo representativo | Tipo de afirmación | Riesgo clave | Requisito mínimo |
+|--------|---------------------|-------------------|--------------|-----------------|
+| 🟢 Descriptivo | Describir, Resumir | Factual / Sintética | Incompletitud u omisión | Objeto o fuente delimitada |
+| 🟡 Analítico | Analizar, Comparar | Interpretativa / Relacional | Criterios implícitos; correlación ≠ causalidad | Dimensiones y criterios definidos |
+| 🟠 Inferencial | Explicar (mecanismo), Interpretar | Causal / Hermenéutica | Especulación no sustentada | Evidencia o marco teórico explícito |
+| 🔴 Decisional | Evaluar, Concluir, Proponer | Conclusiva / Prospectiva | Falsa certeza; cierre prematuro | Marco evaluativo + declaración de límites |
+
+::: {.callout-note collapse="true"}
+## Tabla completa de verbos por nivel de inferencia
+
+| Nivel | Tipo de verbo | Verbo | Operación cognitiva | Tipo de afirmación | Riesgo epistemológico | Requisito metodológico mínimo |
+|-------|--------------|--------|----------------------|--------------------|-----------------------|-------------------------------|
+| 🟢 1 | Descriptivo | Describir | Exponer información estructurada | Descriptiva | Omisión o incompletitud | Objeto o fuente delimitada |
+| 🟢 1 | Descriptivo | Enumerar | Listar elementos | Factual | Lista incompleta | Criterio de inclusión explícito |
+| 🟢 1 | Descriptivo | Resumir | Sintetizar información | Sintética | Pérdida de matices | Extensión definida |
+| 🟢 1 | Descriptivo | Definir | Precisar concepto | Conceptual | Vaguedad o circularidad | Marco disciplinar indicado |
+| 🟢 1 | Descriptivo | Identificar | Señalar elementos presentes | Observacional | Confusión entre presencia y relevancia | Fuente o datos explícitos |
+| 🟡 2 | Analítico | Analizar | Descomponer y examinar relaciones | Interpretativa | Ambigüedad en criterios | Criterios analíticos explícitos |
+| 🟡 2 | Analítico | Comparar | Contrastar dimensiones | Relacional | Comparación superficial | Dimensiones definidas |
+| 🟡 2 | Analítico | Relacionar | Establecer vínculos | Asociativa | Confundir correlación con causalidad | Tipo de relación especificado |
+| 🟡 2 | Analítico | Clasificar | Organizar por categorías | Taxonómica | Criterios implícitos | Sistema de clasificación definido |
+| 🟡 2 | Analítico | Examinar | Inspeccionar en detalle | Interpretativa | Falta de profundidad | Foco analítico claro |
+| 🟠 3 | Inferencial | Explicar^1^ (mecanismo) | Proponer mecanismo o razón | Causal / mecanística | Especulación no sustentada | Evidencia o marco teórico explícito |
+| 🟠 3 | Inferencial | Interpretar | Dar significado a datos | Hermenéutica | Sobreinterpretación | Datos delimitados |
+| 🟠 3 | Inferencial | Inferir | Derivar conclusión lógica | Lógica | Inferencia no justificada | Premisas explícitas |
+| 🟠 3 | Inferencial | Argumentar | Defender una posición | Razonada | Falta de sustento | Evidencia citada |
+| 🟠 3 | Inferencial | Justificar | Fundamentar una afirmación | Normativa / lógica | Razonamiento circular | Criterios explícitos |
+| 🔴 4 | Decisional | Evaluar | Aplicar criterios para emitir juicio | Crítica | Criterios implícitos | Marco evaluativo definido |
+| 🔴 4 | Decisional | Determinar | Concluir con cierre | Conclusiva | Falsa certeza | Nivel de evidencia declarado |
+| 🔴 4 | Conclusivo / Decisional | Concluir | Integrar evidencia en cierre argumental | Conclusiva | Cierre prematuro | Declaración explícita de límites |
+| 🔴 4 | Propositivo | Proponer | Generar hipótesis o solución | Prospectiva | Especulación presentada como evidencia | Base conceptual clara |
+| 🔴 4 | Propositivo | Diseñar | Crear estructura o método | Constructiva | Falta de viabilidad | Restricciones definidas |
+| 🔴 4 | Decisional | Decidir | Elegir alternativa | Normativa | Elección arbitraria | Criterios comparativos explícitos |
+
+:::
+
+nota ^1^:
+El verbo “explicar” puede referirse a una descripción conceptual o a una explicación mecanística. Cuando implica proponer causas o mecanismos, el prompt exige mayor evidencia y control metodológico, ya que el compromiso epistemológico es más alto.
+Ejemplo: 
+- (Descriptivo - bajo compromiso) `Describe la relación entre la expresión del gen X y el gen Y en células tumorales.`
+Aquí solo se pide caracterizar un patrón observado (por ejemplo, coexpresión).
+- (Explicación causal - alto compromiso) `Explica por qué el aumento en la expresión del gen X podría estar causando la sobreexpresión del gen Y.`  
+Aquí ya se está solicitando a) Una relación causal; b) Supuestos sobre dirección del efecto.
+
+
+El nivel de inferencia y el tipo de afirmación no son categorías independientes, sino expresiones del **grado de compromiso epistemológico** que impone el verbo utilizado.
+
+Esta clasificación no prohíbe verbos de nivel alto (🟠–🔴). Indica que, conforme aumenta el alcance de la afirmación solicitada, debe aumentar proporcionalmente:
+
+- la explicitación de evidencia,  
+- la delimitación de supuestos,  
+- la claridad de los criterios,  
+- y los mecanismos de verificación.
+
+En prompting científico, el verbo no es un detalle estilístico: es una especificación funcional del tipo de razonamiento (*en un sentido operativo*^2^) solicitado.
+
+Podemos entender esta progresión como un gradiente de compromiso inferencial:
+
+- **Descriptivo** → Bajo compromiso (caracterización de información disponible).
+- **Interpretativo** → Compromiso moderado (requiere marco conceptual).
+- **Causal / Predictivo** → Alto compromiso (implica mecanismos o generalización).
+- **Decisional / Normativo** → Muy alto compromiso (implica criterio de acción o cierre).
+
+A mayor compromiso inferencial, mayor exigencia metodológica en el diseño del prompt.
+
+
+nota ^2^ :
+En sentido operativo, el verbo indica al modelo qué tipo de patrones estadísticos debe activar y qué tipo de secuencias generar dentro del espacio condicionado por el prompt.
+
+
+
+
+```
+Describe los genes diferencialmente expresados entre dos condiciones experimentales.
+```
+
+solicita una operación fundamentalmente descriptiva, mientras que:
+
+```
+Interpreta el significado biológico de los genes diferencialmente expresados.
+```
+implica inferencias que dependen de supuestos adicionales, conocimiento previo y criterios de validez que deben hacerse explícitos.
+
+
+Reconocer el nivel de inferencia solicitado permite evaluar si la respuesta generada es proporcional a la evidencia disponible.
+
+En contextos científicos, un verbo mal elegido puede inducir afirmaciones que excedan el alcance metodológico del contexto.
+
+
+> En capítulos posteriores se mostrará cómo estas distinciones pueden incorporarse explícitamente en estructuras de prompting más formales y reutilizables.
+
+
+
+#### RESTRICCIONES (Guardrails operativos y epistemológicos)
+
+Reglas explícitas que controlan el comportamiento inferencial y generativo del modelo dentro del alcance definido.
+
+No delimitan el dominio del análisis; regulan cómo debe formularse el razonamiento.
+
+Pueden incluir:
+
+- Prohibición de introducir datos no proporcionados.
+- Prohibición de presentar hipótesis como hechos.
+- Obligación de declarar supuestos.
+- Limitación del lenguaje conclusivo.
+
+Las restricciones actúan como mecanismos de control para reducir sobreconfianza y alucinaciones.
+
+**Ejemplo científico:**   
+
+> No afirmes causalidad.   
+> No introduzcas mecanismos no evaluados experimentalmente.   
+> Declara explícitamente cualquier supuesto necesario.
+
+**Qué error mitiga:**  
+Alucinaciones factuales y exceso de certeza.
+
+
+
+#### SALIDA ESPERADA — Estructura para evaluación y reproducibilidad  
+
+La salida esperada no solo define el formato de la respuesta, sino la estructura que permite evaluarla críticamente.
+
+Una organización explícita facilita:
+
+- Separar datos, inferencias y conclusiones.
+- Identificar supuestos y límites.
+- Comparar respuestas entre iteraciones del mismo prompt.
+- Evaluar consistencia entre modelos o versiones.
+- Integrar la salida en reportes, notebooks o pipelines reproducibles.
+
+Sin una salida estructurada, la verificación se vuelve difusa: no hay dónde separar resultados, inferencias y límites.
+
+La salida no es estética; es una condición de evaluabilidad.
+
+::: {.callout-tip}
+## Formatos de salida
+Consulta el [**Apéndice A — Ejemplos de formatos de salida**](../apendices/apendice_a.md) para una galería de estructuras reutilizables (listas, tablas, bloques etiquetados, plantillas para notebooks).
+:::
+
+- Listas estructuradas.
+- Tablas con criterios definidos.
+- Secciones diferenciadas (datos / interpretación / límites).
+
+#### Ejemplo integrado (RNA-seq)
+
+```txt {.prompt}
+
+ROLE:
+Actúa como bioinformático especializado en análisis de expresión diferencial con experiencia en evaluación metodológica rigurosa.
+
+CONTEXTO:
+Se dispone de una lista de genes diferencialmente expresados entre leucemia y controles sanos obtenida por RNA-seq.
+Utiliza únicamente la información proporcionada; no asumas detalles técnicos no especificados.
+
+ALCANCE:
+Limita el análisis a las asociaciones estadísticas observadas.
+No infieras causalidad ni mecanismos regulatorios no evaluados experimentalmente.
+No generalices más allá de la muestra analizada.
+
+TAREA:
+Describe los resultados estadísticos y ofrece una interpretación biológica preliminar basada en la evidencia disponible.
+
+RESTRICCIONES:
+No introduzcas datos no proporcionados.
+No presentes hipótesis como hechos establecidos.
+Declara explícitamente cualquier supuesto necesario para la interpretación.
+
+SALIDA ESPERADA:
+1) Tabla con genes, log2FC y p-valor ajustado.
+2) Sección separada de interpretación funcional.
+3) Sección final de limitaciones del análisis.
+
+VERIFICACIÓN:
+- Indica el umbral de significancia utilizado.
+- Distingue claramente resultados estadísticos de inferencias biológicas.
+- Señala qué afirmaciones requerirían validación experimental adicional.
+- Indica el nivel de certeza (alto, moderado, bajo) de las principales conclusiones.
+
+```
+
+En este caso, la estructura permite evaluar:
+
+- Corrección estadística.  
+- Alcance de la interpretación.  
+- Diferencia entre asociación y causalidad.
+
+
+#### 🧩 VERIFICACIÓN — Evaluabilidad y control epistemológico
+
+La verificación es el componente que distingue con mayor claridad al *prompting científico* de otras formas de interacción con IA. No implica que la IA valide su propia respuesta, sino que el **prompt esté diseñado para que un humano pueda evaluar críticamente lo generado**.
+
+Un modelo no puede verificar empíricamente sus afirmaciones.  
+La verificación no transforma una respuesta en verdadera; la convierte en **evaluable**.
+
+Incluir verificación en un prompt significa anticipar explícitamente los criterios mediante los cuales las afirmaciones podrán ser examinadas.
+A diferencia de las restricciones, que limitan la operación del modelo, la verificación define cómo será examinada su salida.
+
+- qué tipo de evidencia las respalda,
+- cómo podrían contrastarse,
+- qué supuestos implican,
+- y bajo qué condiciones deberían considerarse incompletas o refutables.
+
+La verificación convierte una generación probabilística en un **objeto susceptible de análisis científico**.
+
+::: {.callout-tip}
+## Conexión con el Módulo 3
+En protocolos multi-fase, la verificación se distribuye a lo largo del flujo — pero hay un momento que no puede delegarse al modelo: la **integración final y el juicio científico**. En el Módulo 3 lo llamamos Fase 5, y representa la cristalización de este principio: ningún prompt, por bien diseñado que esté, reemplaza tu criterio sobre qué evidencia es suficiente y qué sigue siendo incierto.
+:::
+
+**Funciones clave:**
+
+- Distinguir entre datos, inferencias y especulación.
+- Identificar y declarar límites y supuestos interpretativos.
+- Hacer trazable el razonamiento.
+- Facilitar contrastación externa y eventual refutación.
+
+La verificación no modifica la distribución interna del modelo; modifica el modo en que usamos y evaluamos su salida.
+
+
+**Ejemplos de mecanismos de verificación exigibles en un prompt:**
+
+- “Indica las fuentes primarias o bases de datos donde pueda verificarse cada afirmación.”
+- “Especifica qué tipo de evidencia (experimental, computacional, revisión) respalda cada punto.”
+- “Distingue claramente entre evidencia directa, inferencia y especulación.”
+- “Si la evidencia es insuficiente, indícalo explícitamente.”
+- “Describe cómo un investigador podría contrastar cada afirmación.”
+
+
+
+::: {.callout-note}
+**Sanity checks conceptuales**: evaluaciones preliminares realizadas por un humano para examinar la coherencia lógica y biológica de una afirmación generada por la IA antes de contrastarla formalmente.
+
+**Ejemplos:**
+- Inferir regulación directa a partir de datos de expresión: ¿los datos permiten causalidad o solo asociación?
+- Asumir función génica por homología: ¿existe evidencia funcional directa?
+:::
+
+
+#### Anti-ejemplo: cuando “pedir verificación” no es verificación
+
+El siguiente prompt parece científico, pero no define criterios evaluables:
+
+```txt {.prompt}
+Explica la regulación génica en bacterias.
+Asegúrate de que sea correcta y esté científicamente validada.
+```
+
+**Problema**:
+
+- No define qué significa “correcta”.  
+- No especifica fuentes aceptables.  
+- No distingue tipos de evidencia.  
+- Traslada implícitamente la validación a la IA.  
+
+Frases como “asegúrate de que sea correcto” no introducen verificación si no se acompañan de criterios explícitos.
+
+
+
+**✅ Versión corregida**
+
+
+```txt {.prompt}
+ROLE:
+Actúa como asistente en genética molecular.
+
+CONTEXTO:
+Descripción introductoria de regulación génica bacteriana para estudiantes de licenciatura.
+
+TAREA:
+Describe los principales mecanismos de regulación génica en bacterias.
+
+RESTRICCIONES:
+- Incluye únicamente mecanismos ampliamente aceptados.
+- Distingue evidencia experimental directa de modelos generales.
+- Indica excepciones o debates cuando existan.
+
+VERIFICACIÓN:
+- Señala revisiones o libros donde pueda verificarse cada mecanismo.
+- Explica cómo el lector podría contrastar la información presentada.
+```
+
+
+
+| Verificación retórica (suena rigurosa, pero no define procedimiento) | Verificación operativa (define criterios y pasos ejecutables) |
+|------------------------------------------------------------------------|----------------------------------------------------------------|
+| “Analiza críticamente los resultados.” | “Identifica al menos 3 posibles fuentes de sesgo y explica cómo podrían afectar la magnitud del efecto observado.” |
+| “Valida la hipótesis planteada.” | “Formula hipótesis nula y alternativa, especifica el estadístico de prueba adecuado y define el umbral de significancia (α = 0.05).” |
+| “Revisa la literatura relevante.” | “Resume al menos 5 artículos revisados por pares (publicados después de 2018) con diseño experimental comparable e indica sus principales hallazgos y limitaciones.” |
+| “Asegúrate de que el análisis sea estadísticamente sólido.” | “Verifica que se cumplan los supuestos del modelo (normalidad, igualdad de varianzas, independencia) y reporta intervalos de confianza al 95%.” |
+| “Confirma que las conclusiones estén bien fundamentadas.” | “Distingue explícitamente entre correlación y causalidad, señala variables de confusión posibles y describe qué evidencia adicional sería necesaria para establecer causalidad.” |
+
+
+
+
+
+#### Restricciones vs. Verificación
+
+| Dimensión | Restricciones | Verificación |
+|------------|--------------|--------------|
+| Naturaleza | Preventiva | Evaluativa |
+| Momento | Antes de la respuesta | Después de la generación |
+| Función | Limitar lo que puede afirmarse | Permitir juzgar lo afirmado |
+| Pregunta clave | ¿Qué NO puede decir la IA? | ¿Cómo puedo examinar esto? |
+| Rol epistemológico | Acota el espacio inferencial | Habilita evaluación y refutación |
+| Garantiza corrección | ❌ No | ❌ No |
+| Garantiza evaluabilidad | ⚠️ Parcialmente | ✅ Sí |
+| Actor principal | Diseño del prompt | Humano |
+
+
+
+```{mermaid}
+%%| echo: false
+%%{init: {"flowchart": {"htmlLabels": true}}}%%
+flowchart LR
+  A["Restricciones<br/>(Límites epistemológicos y operativos)"] --> B["Generación<br/>(Salida de la IA)"]
+  B --> C["Verificación<br/>(Criterios y mecanismos)"]
+  C --> D["Juicio humano<br/>(Aceptar, cuestionar o refutar)"]
+```
+**Flujo epistemológico del prompting científico.**
+Las restricciones acotan el espacio de generación de la IA; la verificación define criterios y mecanismos para evaluar la salida; el juicio humano decide aceptar, cuestionar o refutar lo generado. 
+El modelo genera texto plausible; el conocimiento solo emerge cuando ese texto es contrastado mediante criterios externos.
+
+
+
+### Síntesis: los siete componentes
+
+Una vez conocidos en detalle, esta tabla integra cómo opera cada componente dentro del prompt científico.
+
+| Componente | Momento | Función principal | Riesgo si se omite |
+|---|---|---|---|
+| **Rol** | Antes de generar | Activa marco epistemológico y profundidad | Respuesta genérica |
+| **Contexto** | Antes del análisis | Reduce ambigüedad y supuestos implícitos | Respuesta descontextualizada |
+| **Alcance** | Al delimitar | Evita expansión temática y sobre-inferencia | Conclusiones injustificadas |
+| **Tarea** | Al instruir | Focaliza la operación cognitiva | Dispersión temática |
+| **Restricciones** | Durante la generación | Controla afirmaciones y alucinaciones | Sobreconfianza o invención |
+| **Salida esperada** | Al estructurar | Habilita trazabilidad y comparación | Texto fluido pero no evaluable |
+| **Verificación** | Después de generar | Convierte la respuesta en objeto examinable | Sin criterio de validación humana |
+
+> **Regla práctica:** las restricciones acotan *qué puede decir* la IA; la verificación define *cómo juzgas tú* lo que dijo.
+
+
+### Para discutir
+
+- ¿Qué diferencia hay entre una respuesta convincente y una verificable?
+- ¿Puede una respuesta ser verificable pero incorrecta?
+- ¿Puede ser convincente pero no verificable?
+
+
+> Un buen prompt no es para que la IA responda,  
+> sino para que tú puedas evaluar, verificar y reproducir la respuesta.
+> El prompt es tu hipótesis metodológica escrita.
+La respuesta no se convierte en conocimiento hasta que la validas.
+
+
+
+## Errores Frecuentes en Genética al Usar IA
+
+Estos errores no son generados por la IA, sino por interpretaciones humanas que la IA puede amplificar si el prompt no controla el nivel de inferencia.
+
+::: {.callout-warning}
+## Confusiones Conceptuales Comunes
+
+- **Homología ≠ función**
+- **Coexpresión ≠ regulación directa**
+- **Motivo encontrado ≠ regulador real**
+- **Significativo estadístico ≠ biológicamente relevante**
+
+Estos errores se amplifican con prompts mal formulados y pueden detectarse
+mediante **sanity checks conceptuales** básicos, en los que un humano evalúa si
+las afirmaciones respetan las distinciones fundamentales del dominio biológico.
+
+:::
+
+
+
+## Ejemplos de Prompts: Buenos y Malos
+
+### ❌ Ejemplo 1: Prompt Mal Hecho
+
+```txt {.prompt}
+Analiza este FASTA y dime si está bien.
+```
+
+**Problemas detectables:**   
+
+- ¿Qué FASTA?
+- ¿Qué significa "bien"?
+- ¿Qué criterios de calidad?
+- ¿Cómo se verifica la respuesta?
+
+
+**Conclusión**   
+Este prompt no es científico: es vago e irreproducible.
+
+
+
+### ⚠️ Ejemplo 2: Prompt Aceptable (Pero Mejorable)
+
+```txt {.prompt}
+Tengo un archivo FASTA con secuencias de DNA.
+Analiza su calidad y dime si sirve para análisis posteriores.
+```
+
+**Aspectos positivos:**   
+
+- Hay contexto
+- Hay intención analítica, pero no hay criterios metodológicos explícitos.
+
+**Deficiencias:**   
+
+- No define criterios de calidad
+- No limita invención de resultados
+- No pide verificación
+
+
+
+### ✅ Ejemplo 3: Prompt Científico Correcto
+
+```txt {.prompt}
+ROLE:
+Eres un asistente experto en bioinformática y análisis de secuencias, con enfoque en control de calidad.
+
+CONTEXTO:
+Tengo un archivo FASTA con secuencias de DNA (longitud variable, sin calidad PHRED).
+El objetivo es evaluar si los datos son adecuados para análisis posteriores como descubrimiento de motivos o conteo de k-mers.
+
+ALCANCE:
+Limítate a métricas de calidad inferibles desde FASTA (sin calidades por base) y a su impacto en análisis de motivos/k-mers.
+No infieras resultados específicos del archivo ni biología del organismo.
+
+TAREA:
+Describe qué métricas de calidad revisarías en este FASTA y qué problemas potenciales podrían afectar el análisis.
+
+RESTRICCIONES:
+- No ejecutes código.
+- No inventes resultados.
+- Si falta información, indícalo explícitamente.
+
+SALIDA ESPERADA:
+- Lista de métricas de calidad (qué medir)
+- Problemas asociados (por qué importa)
+- Recomendaciones generales (cómo mitigarlo)
+
+VERIFICACIÓN:
+Indica cómo un humano podría verificar cada métrica usando herramientas estándar (solo métodos/herramientas, no resultados).
+
+```
+
+
+¿Por qué es buen prompt científico?
+
+- ✓ Se puede verificar cada punto
+- ✓ Reduce riesgo de invención de contenido
+- ✓ Proporciona criterios claros
+- ✓ Es reproducible
+
+Este prompt no busca que la IA determine si el FASTA “sirve”, sino que explicite criterios para que un humano pueda decidirlo.
+
+
+::: {.exercise-box}
+#### Actividad en clase — Evaluación de prompts
+
+1. Aplique el prompt propuesto a un asistente de IA generativa [*Prompting Cientifico modo docente*](https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente).
+2. Compare la respuesta obtenida con los criterios de prompting científico discutidos en este capítulo.
+3. Identifique:
+   - inferencias no justificadas,
+   - supuestos implícitos,
+   - y posibles fallas de verificación.
+
+**Objetivo:** evaluar cómo el diseño del prompt condiciona el tipo de razonamiento producido.
+:::
+
+
+
+### ⭐⭐⭐ Ejemplo 4: Prompt con Estructura Científica Avanzada
+
+Este ejemplo incorpora no solo control del espacio de generación, sino también estructura de evaluación explícita.
+
+```txt {.prompt}
+ROLE:
+Actúa como bioinformático senior enfocado en reproducibilidad.
+
+CONTEXTO:
+Archivo FASTA de DNA genómico (organismo bacteriano).
+Planeo usarlo para análisis de motivos regulatorios.
+
+TAREA:
+Propón un checklist de control de calidad previo al análisis,
+explicando por qué cada punto es relevante biológicamente.
+
+RESTRICCIONES:
+- No asumas datos que no se mencionan.
+- No generes cifras.
+- Declara supuestos explícitamente.
+
+FORMATO DE SALIDA:
+Tabla con columnas:
+1) Métrica
+2) Justificación biológica
+3) Herramienta típica de verificación
+
+VERIFICACIÓN:
+Incluye una sección final titulada:
+"Cómo un humano podría validar estas recomendaciones".
+```
+
+
+**Conclusión**:
+
+*Esto es pensar como científico, no como usuario de IA.*
+
+
+
+
+
+## Ejercicio en Clase: Mini-Debate
+
+::: {.exercise-box}
+
+### Debate: Correlación, Causalidad y Evidencia
+
+**Prompt a analizar:**
+
+```txt {.prompt}
+ROLE:
+Eres un asistente experto en bioinformática.
+
+CONTEXTO:
+Tengo datos de expresión génica bajo dos condiciones.
+
+TAREA:
+Determina si el gen X regula al gen Y.
+```
+
+**Organización (10–15 minutos):**
+
+Dividir al grupo en dos equipos:
+
+- **Equipo A**: "Con estos datos **sí** se puede afirmar que X regula a Y"
+- **Equipo B**: "Con estos datos **no** se puede afirmar regulación"
+
+**Preguntas guía:**
+
+- ¿Qué evidencia real aportan los datos de expresión?
+- ¿Qué afirmaciones **no** se pueden sostener?
+- ¿Qué experimentos o datos adicionales serían necesarios?
+- ¿Qué riesgos hay al usar lenguaje causal sin evidencia?
+
+:::
+
+
+
+::: {.callout-note collapse="true"}
+
+#### Mensaje del Debate
+
+> *Los datos responden solo a las preguntas que fueron diseñados para responder.*
+
+**Discusión crítica:**
+
+Este prompt **confunde correlación con causalidad**. Los datos de expresión génica solo permiten observar asociaciones estadísticas, no regulación directa.
+
+Los modelos aprenden correlaciones estadísticas, no mecanismos causales.
+Una alta capacidad predictiva no equivale a demostración de causalidad biológica.
+
+
+
+::: {.callout-warning}
+## Advertencia Formativa
+
+> *Un modelo puede predecir con alta precisión estadística y aun así estar científicamente equivocado.*
+
+Confundir predicción con causalidad puede llevar a:
+
+- Malas interpretaciones biológicas
+- Conclusiones exageradas
+- Errores en diseño experimental
+
+:::
+
+:::
+
+## Resumen
+
+En este capítulo aprendiste a transformar el prompt en un instrumento metodológico.
+
+Comprendiste que:
+
+- ✓ El prompting científico no busca creatividad ilimitada, sino inferencia controlada.
+- ✓ El verbo de la tarea define el nivel de compromiso epistemológico.
+- ✓ El contexto delimita el alcance legítimo de la inferencia.
+- ✓ Las restricciones reducen el riesgo de sobre-interpretación.
+- ✓ La salida esperada estructura la evaluabilidad y la reproducibilidad.
+- ✓ La verificación convierte una respuesta plausible en un objeto examinable.
+- ✓ El juicio humano es la etapa final donde el conocimiento se acepta, cuestiona o refuta.
+
+Un prompt científico no garantiza verdad, pero sí puede garantizar control metodológico.
+
+
+::: {.exercise-box collapse="true"}
+
+## Tarea — Diseño crítico de un prompt científico
+
+Diseñe un **prompt científico** orientado a apoyar un problema real de investigación en genética, bioinformática o biología computacional.
+
+El problema debe requerir al menos **inferencia analítica o interpretativa** (no solo descripción).
+
+#### Requisitos del prompt
+
+Debe incluir explícitamente:
+
+1. **Rol** del asistente.
+2. **Contexto científico** delimitado.
+3. **Tarea** con verbo claramente definido.
+4. **Salida esperada** estructurada para evaluación.
+5. **Restricciones epistemológicas** proporcionales al nivel de inferencia.
+6. **Criterio de verificación** que permita examen externo.
+
+#### Análisis crítico (obligatorio)
+
+Incluya un breve párrafo (5–8 líneas) donde explique:
+
+- Qué nivel de inferencia solicita su verbo.
+- Cuál es el principal riesgo epistemológico del prompt.
+- Qué tipo de evidencia sería necesaria para validar las conclusiones.
+- Qué afirmaciones NO pueden hacerse a partir de la salida.
+
+#### Objetivo
+
+Demostrar que el prompt funciona como un **instrumento de control inferencial y evaluabilidad**, no como una simple solicitud de respuesta.
+
+:::
+
+
+## Checkpoint — antes del Capítulo 3
+
+::: {.callout-tip title="Autoevaluación formativa (~5 min)"}
+Responde por escrito **sin consultar el texto**.
+
+1. Elige **uno** de los siete componentes del prompt científico (Rol, Contexto, Tarea, Restricciones, Salida esperada, Alcance, Verificación) y explica **por qué omitirlo** cambia la calidad o evaluabilidad de la respuesta.
+2. Clasifica el verbo de esta tarea en la [tabla de riesgo epistemológico](#clasificación-de-verbos-en-investigación-según-nivel-de-inferencia-y-riesgo-epistemológico): *"Determina si el gen X regula al gen Y a partir de esta tabla de expresión diferencial."* Indica nivel de inferencia y principal riesgo.
+3. Escribe un **anti-ejemplo** de prompt para análisis de RNA-seq (2–4 líneas) que mezcle extracción, interpretación y conclusión en un solo bloque. Explica qué tiene de metodológicamente incorrecto.
+
+Si respondiste con seguridad las tres sin dificultad, comprueba si no hay *ilusión de competencia* [@koriat2005].
+
+> ¿Necesitas repasar algún término? Consulta el [**Glosario**](../apendices/glosario.qmd).
+
+> 🛠️ **Practica la construcción guiada:** el [Asistente de Prompting Científico](https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente) te llevará por los siete componentes paso a paso. Usa tu prompt resultante como entrega para este checkpoint.
+:::
+
+## Referencias
+
+::: {#refs}
+:::
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-prev}
+::: {.chapter-nav-label}
+Anterior
+:::
+::: {.chapter-nav-title}
+Introducción al Prompting
+:::
+:::
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Siguiente
+:::
+::: {.chapter-nav-title}
+Diseño de Protocolos de Prompting
+:::
+:::
+
+:::
+
+

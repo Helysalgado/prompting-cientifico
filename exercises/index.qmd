@@ -1,0 +1,52 @@
+---
+title: "Ejercicios"
+subtitle: "Práctica con criterio científico"
+description: "Ejercicios para reforzar el diseño, evaluación e iteración de prompts científicos"
+---
+
+## Cómo usar los ejercicios
+
+::: {.callout-tip}
+## Recomendaciones
+
+1. **Lee las instrucciones completas** antes de comenzar.
+2. **Intenta resolverlo de forma independiente** antes de buscar pistas.
+3. **Documenta tu proceso**: un buen prompt incluye el razonamiento, no solo el resultado.
+4. **Reflexiona** sobre qué cambiarías si repitieras el ejercicio.
+
+:::
+
+---
+
+## Ejercicios disponibles
+
+### Módulo 1 — Fundamentos del Prompting Científico
+
+::: {.card-grid}
+
+::: {.card .card-warning}
+::: {.card-body}
+
+#### Análisis Crítico de Prompts
+
+**Tema**: Prompting científico y patrones epistemológicos
+**Dificultad**: <span class="badge badge-warning">Intermedio</span>
+**Tiempo estimado**: 45–60 minutos
+
+Identifica y mejora la calidad epistemológica de prompts científicos aplicando los criterios del curso.
+
+[Ir al ejercicio →](sesion-01-analisis-prompts.qmd)
+
+:::
+:::
+
+:::
+
+---
+
+::: {.callout-note}
+## Próximos ejercicios
+
+Se agregarán ejercicios para los módulos 2, 3 y 4 conforme avance el curso.
+
+:::

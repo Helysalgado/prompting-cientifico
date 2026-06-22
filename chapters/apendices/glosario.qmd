@@ -1,0 +1,247 @@
+---
+title: "Glosario de Términos"
+subtitle: "Conceptos clave de IA generativa y prompting científico"
+date: last-modified
+description: "Definiciones de términos técnicos utilizados en la sesión"
+categories: [glosario, referencia, terminología]
+---
+
+## Introducción
+
+Este glosario define los conceptos clave utilizados a lo largo de la sesión. Los términos se presentan en orden temático para facilitar la comprensión.
+
+
+## Alcance (componente del prompt)
+
+Componente del prompt verificable que delimita positivamente el territorio del análisis: qué incluir, en qué nivel trabajar y qué tipo de evidencia considerar.
+
+A diferencia de las Restricciones, el Alcance se formula sin negaciones: especifica *qué analizar*, no *qué prohibir*. Ambos trabajan juntos: el Alcance define el espacio; las Restricciones controlan cómo razonar dentro de él.
+
+---
+
+## Alineamiento
+
+Proceso mediante el cual un modelo de lenguaje se ajusta para producir respuestas útiles, seguras y socialmente aceptables, más allá de la predicción probabilística pura.
+
+Los métodos de alineamiento más comunes son **RLHF**, **RLAIF**, **DPO** y **Constitutional AI**. Todos incorporan señales de preferencia humana o normativa en el entrenamiento. El alineamiento optimiza *preferencia humana*, no *rigurosidad científica*.
+
+---
+
+## Alucinación
+
+Respuesta generada por un modelo de lenguaje que presenta información incorrecta, inventada o no verificable, pero con apariencia de coherencia.
+
+Las alucinaciones no implican intención ni error consciente; son consecuencia del proceso probabilístico de generación de texto.
+
+---
+
+## Checkpoint
+
+Punto de revisión humana dentro de un protocolo de prompting multi-fase. El investigador evalúa la cobertura o calidad de la salida antes de avanzar a la siguiente fase, pero no hay una condición mínima que impida el progreso.
+
+Contrasta con el **Gate epistémico**, que sí impide avanzar si no se cumple una condición verificable.
+
+---
+
+## Chatbot
+
+Interfaz conversacional que permite interactuar con un modelo de lenguaje mediante intercambio de mensajes.
+
+Un chatbot no es el modelo en sí, sino el sistema que gestiona la conversación, el historial y la presentación de las respuestas.
+
+---
+
+## Contexto
+
+Información que delimita el universo de referencia sobre el cual el modelo construirá su respuesta.
+
+Reduce ambigüedad y acota el espacio de interpretaciones posibles.
+
+---
+
+## Embeddings
+
+Representaciones numéricas (vectores) que codifican tokens o fragmentos de texto en un espacio matemático.
+
+Permiten que el modelo transforme texto en estructuras que pueden ser procesadas mediante operaciones matemáticas. Tokens con significados similares tienden a ubicarse en regiones cercanas del espacio de embeddings.
+
+---
+
+## DPO (Direct Preference Optimization)
+
+Método de alineamiento que optimiza directamente las preferencias humanas sin el pipeline completo de aprendizaje por refuerzo de RLHF. Requiere pares de respuestas etiquetadas como "preferida" y "rechazada" y ajusta el modelo directamente con ellas.
+
+---
+
+## Few-shot prompting
+
+Técnica de prompting que incluye uno o más ejemplos de entrada–salida antes de la tarea principal, como referencia explícita del formato, criterio o nivel de detalle esperado. Reduce ambigüedad y acota el espacio de respuestas, pero puede introducir sesgo si los ejemplos son conceptualmente débiles.
+
+---
+
+## Gate epistémico
+
+Regla metodológica dentro de un protocolo multi-fase que *impide avanzar* si no se cumple una condición mínima verificable (por ejemplo: no pasar a la Fase 3 si alguna fila de la tabla carece de cita textual). Todo gate incluye un checkpoint, pero no todo checkpoint es un gate.
+
+La diferencia con un **Checkpoint** es de grado de obligatoriedad: el checkpoint es una revisión; el gate es una barrera epistemológica.
+
+---
+
+## Generación autoregresiva
+
+Proceso mediante el cual el modelo genera una secuencia de texto prediciendo cada token en función de los tokens previamente generados y del contexto inicial.
+
+---
+
+## Ingeniería de prompts
+
+Conjunto de principios y prácticas para diseñar, evaluar y refinar prompts de forma controlada. No consiste en "preguntar mejor": es diseñar instrucciones que tomen decisiones conscientes sobre qué información se proporciona, qué se espera como resultado, qué límites existen y cómo se evaluará la respuesta. Un prompt se asemeja más a un protocolo o instructivo técnico que a una pregunta informal.
+
+---
+
+## IA generativa
+
+Conjunto de modelos de inteligencia artificial capaces de producir contenido (texto, código, imágenes, etc.) a partir de patrones aprendidos en grandes volúmenes de datos.
+
+En este curso, el término se refiere específicamente a modelos de lenguaje generativos.
+
+---
+
+## RLHF (Reinforcement Learning from Human Feedback)
+
+Método de alineamiento en el que humanos evalúan pares de respuestas del modelo (cuál es "mejor") y esa retroalimentación se usa para ajustar el modelo mediante aprendizaje por refuerzo. RLHF optimiza la preferencia humana, no la corrección científica.
+
+Tiene variantes: **RLAIF** usa otro modelo en lugar de anotadores humanos; **DPO** elimina el componente de aprendizaje por refuerzo; **Constitutional AI** guía el alineamiento con principios normativos explícitos.
+
+---
+
+## RLAIF (Reinforcement Learning from AI Feedback)
+
+Variante de RLHF en la que las evaluaciones de pares de respuestas son realizadas por otro modelo de lenguaje en lugar de anotadores humanos en cada paso. Reduce costos de anotación pero puede heredar sesgos del modelo evaluador.
+
+---
+
+## LLM (Large Language Model)
+
+Modelo de lenguaje entrenado con grandes volúmenes de texto que aprende patrones estadísticos del lenguaje y puede generar texto coherente, responder preguntas y asistir en tareas cognitivas.
+
+No valida conocimiento científico ni razona de manera deliberativa: modela probabilidades condicionadas al contexto.
+
+---
+
+## Modelos de Lenguaje Grande (LLM) conocidos
+
+Ejemplos de LLM ampliamente utilizados incluyen:
+
+- GPT (OpenAI)  
+- Claude (Anthropic)  
+- Gemini (Google)  
+- Llama (Meta)  
+
+Estos modelos difieren en arquitectura, tamaño, entrenamiento y políticas de uso, pero comparten el principio general de generación autoregresiva de texto.
+
+---
+
+## Modelo de Lenguaje (Language Model)
+
+Sistema entrenado para predecir la siguiente unidad de texto (token) en una secuencia dada.
+
+---
+
+## Probabilidad condicional $P(y | x)$
+
+Expresión que representa la probabilidad de una salida $y$ dado un contexto $x$.
+
+En modelos de lenguaje, indica que la respuesta generada depende del prompt y del texto previo.
+
+---
+
+## Prompt
+
+Instrucción escrita que define una tarea para un modelo de lenguaje.
+
+En este curso, un prompt se entiende como una configuración estructurada de condiciones (rol, contexto, tarea, restricciones y formato de salida).
+
+---
+
+## Restricciones
+
+Componente del prompt que delimita qué tipo de afirmaciones puede hacer el modelo. En el prompting básico acotan extensión, fuente o alcance temático. En el prompting verificable (modo científico) funcionan como **controles epistemológicos**: impiden que el modelo asuma causalidad donde solo hay correlación, infiera mecanismos no evaluados experimentalmente o presente hipótesis como hechos.
+
+La diferencia con el **Alcance**: el Alcance delimita en positivo (qué incluir); las Restricciones delimitan en negativo (qué no puede afirmarse).
+
+---
+
+## Riesgo epistemológico
+
+Grado en que una respuesta generada puede inducir interpretaciones no justificadas o sobre-extensiones inferenciales.
+
+Se relaciona con el tipo de tarea solicitada y con la ausencia de delimitaciones explícitas.
+
+---
+
+## Rol
+
+Componente del prompt que define la función operativa que el modelo debe asumir.
+
+No es una etiqueta profesional genérica, sino una descripción concreta de la función que se desempeña dentro de una fase del proceso científico.
+
+---
+
+## Salida esperada
+
+Especificación del formato o estructura en que debe presentarse la respuesta.
+
+No mejora el razonamiento del modelo, pero facilita la claridad y revisión crítica del contenido generado.
+
+---
+
+## Tarea
+
+Operación específica que se solicita al modelo (por ejemplo: describir, comparar, analizar, evaluar).
+
+El verbo utilizado define el tipo de transformación aplicada a la información.
+
+---
+
+## Temperatura
+
+Parámetro que controla la variabilidad en la generación de texto.
+
+Valores bajos producen respuestas más deterministas y consistentes con las opciones más probables.  
+Valores altos aumentan la diversidad, pero no garantizan mayor calidad ni corrección científica.
+
+---
+
+## Token
+
+Unidad mínima de texto que procesa un modelo de lenguaje.
+
+Puede corresponder a una palabra completa, parte de una palabra o un símbolo.
+Los modelos generan texto token por token.
+
+---
+
+## Trazabilidad epistemológica
+
+Capacidad de reconstruir el razonamiento y las fuentes que sustentan cada afirmación del modelo. Un prompt con alta trazabilidad especifica qué tipo de evidencia se acepta, cómo debe citarse y qué no puede inferirse. Permite al investigador auditar el proceso, no solo evaluar el resultado.
+
+---
+
+## Sanity check
+
+Verificación mínima de coherencia que se aplica antes de procesar una salida. En el contexto del prompting científico, es una comprobación rápida de que la respuesta no contiene contradicciones internas obvias, afirmaciones fuera del alcance declarado o saltos inferenciales no justificados. No reemplaza la revisión crítica completa; es una primera criba.
+
+---
+
+## Separación epistémica
+
+Principio de diseño de prompts según el cual cada fase del protocolo debe resolver un tipo distinto de pregunta (descriptiva, analítica, interpretativa, prescriptiva). Mezclar tipos epistémicos en un solo prompt aumenta el riesgo de respuestas inconsistentes o difíciles de verificar. La separación epistémica es un argumento clave para usar protocolos multi-fase.
+
+---
+
+## Zero-shot prompting
+
+Técnica en la que el prompt no incluye ejemplos de entrada–salida: el modelo debe inferir el formato, criterio y nivel de detalle deseados exclusivamente a partir de la instrucción. Es la técnica de menor especificidad y mayor riesgo de ambigüedad. Apropiada cuando el modelo tiene suficiente conocimiento previo sobre la tarea o cuando la exploración es el objetivo, no la producción de una salida verificable.
+
+Contrasta con **Few-shot prompting**, que sí incluye ejemplos.

@@ -1,0 +1,251 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4200
+    browser: true
+  render:
+    - "**/*.qmd"
+    - "chapters/**/*.md"
+    - "!COMPONENTS_REFERENCE.md"
+    - "!chapters/capitulo*/files/*.ipynb"
+    - "!chapters/example-chapter-*/**"
+    - "!templates/**"
+
+
+resources:
+  - capitulo*/files/**/*
+
+metadata:
+  version: "0.1.0"
+
+website:
+  title: "Prompting Científico con Inteligencia Artificial"
+  description: "Pensamiento científico, validación y reproducibilidad con IA"
+  site-url: "https://helysalgado.github.io/prompting-cientifico"
+  repo-url: "https://github.com/Helysalgado/prompting-cientifico"
+  repo-actions: [edit, issue]
+  
+  open-graph:
+    title: "Prompting Científico con Inteligencia Artificial"
+    description: "Pensamiento científico, validación y reproducibilidad con IA"
+  
+  navbar:
+    background: primary
+    title: "Prompting Científico"
+    pinned: true
+    collapse-below: lg
+    left:
+      - text: "Inicio"
+        icon: house-fill
+        href: index.qmd
+      - text: "Módulos"
+        icon: book-fill
+        menu:
+          - text: "Módulo 1 — Fundamentos del LLM"
+            icon: brain
+            href: chapters/capitulo1/index.qmd
+          - text: "Módulo 2 — Diseño de Prompts"
+            icon: flask
+            href: chapters/capitulo2/index.qmd
+          - text: "Módulo 3 — Anatomía del Prompt"
+            icon: layout-text-window
+            href: chapters/capitulo3/index.qmd
+          - text: "Módulo 4 — Protocolos Multi-etapa"
+            icon: diagram-3
+            href: chapters/capitulo4/index.qmd
+      - text: "Antes de comenzar"
+        icon: gear-fill
+        href: prereqs.qmd
+      - text: "Recursos"
+        icon: box-arrow-down
+        href: resources/index.qmd
+    right:
+      - icon: github
+        href: "https://github.com/Helysalgado/prompting-cientifico"
+        aria-label: Repositorio en GitHub
+    
+    tools:
+      - icon: moon
+        text: "Dark Mode"
+        toggle-color-mode: true
+  
+  sidebar:
+    style: "floating"
+    background: light
+    search: true
+    collapse-level: 2
+    pinned: true
+    contents:
+      - text: "🏠 Inicio"
+        href: index.qmd
+      - text: "⚙️ Antes de comenzar"
+        href: prereqs.qmd
+
+      - section: "---"
+
+      - section: "Módulos"
+        contents:
+          - text: "1. Fundamentos del LLM"
+            href: chapters/capitulo1/index.qmd
+          - text: "2. Diseño de Prompts"
+            href: chapters/capitulo2/index.qmd
+          - text: "3. Anatomía del Prompt"
+            href: chapters/capitulo3/index.qmd
+          - text: "4. Protocolos Multi-etapa"
+            href: chapters/capitulo4/index.qmd
+
+      - section: "---"
+
+      - section: "Apéndices"
+        contents:
+          - text: "⚡ Referencia rápida"
+            href: chapters/apendices/referencia-rapida.qmd
+          - text: "Del prompt a la respuesta"
+            href: chapters/apendices/from-prompt-to-answer.md
+          - text: "Cómo se construye un LLM"
+            href: chapters/apendices/como-se-construye-un-llm.md
+          - text: "Formatos de salida"
+            href: chapters/apendices/apendice_a.md
+          - text: "Glosario"
+            href: chapters/apendices/glosario.qmd
+
+      - section: "---"
+      - text: "📥 Recursos"
+        href: resources/index.qmd
+      - text: "ℹ️ Acerca de"
+        href: about.qmd
+  
+  page-navigation: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+  
+  page-footer:
+    background: light
+    left: |
+      <div class="footer-left">
+        © $year$ $author$. 
+        Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+      </div>
+    center: |
+      <div class="footer-center">
+        Built with ❤️ using <a href="https://quarto.org/">Quarto</a>
+      </div>
+    right:
+      - icon: github
+        href: "https://github.com/Helysalgado/prompting-cientifico"
+        aria-label: GitHub
+      - icon: envelope
+        href: "mailto:heladia@ccg.unam.mx"
+        aria-label: Email
+
+format:
+  html:
+    include-after-body:
+      - _includes/after-body.html
+    theme: 
+      light: 
+        - cosmo
+        - assets/scss/custom-light.scss
+      dark:
+        - darkly
+        - assets/scss/custom-dark.scss
+    css: 
+      - assets/css/styles.css
+      - assets/css/components.css
+    
+    # Font Awesome integration
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    #include-after-body:
+    #  - assets/js/custom.js
+    
+    # Table of contents
+    toc: true
+    toc-depth: 3
+    toc-title: "En esta página"
+    toc-location: right
+    toc-expand: 2
+    
+    # Sections
+    number-sections: true
+    number-depth: 3
+    section-divs: true
+    
+    # Code
+    code-copy: true
+    code-fold: false
+    code-tools: 
+      source: true
+      toggle: true
+      caption: "Code"
+    code-link: true
+    code-line-numbers: false
+    code-overflow: wrap
+    highlight-style: github
+    
+    
+    # Figures and tables
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    fig-align: center
+    fig-responsive: true
+    
+    # Links
+    link-external-newwindow: true
+    link-external-icon: true
+    link-external-filter: '^(?:http:|https:)\/\/(?:www\.)?yourdomain\.com'
+    
+    # Navigation
+    smooth-scroll: true
+    anchor-sections: true
+    
+    # References
+    citations-hover: true
+    footnotes-hover: true
+    
+    # Appearance
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    
+    # Metadata
+    date-format: "D [de] MMMM [de] YYYY"
+    lang: es
+    
+    # Syntax highlighting
+    # syntax-definitions:
+    #   - assets/syntax/custom.xml
+
+execute:
+  freeze: auto
+  cache: true
+  echo: false
+  warning: false
+  message: false
+  error: false
+  eval: true
+
+# Bibliography
+bibliography: references.bib
+
+# Callout styling
+callout-appearance: default
+callout-icon: true
+
+# Editor
+editor: visual
+
+# Metadata
+author: "Heladia Salgado"
+year: 2026
+email: "heladia@ccg.unam.mx"
+institution: "Centro de Ciencias Genómicas, UNAM"
+license: "CC BY 4.0"
+license-url: "https://creativecommons.org/licenses/by/4.0/"
+

@@ -1,0 +1,126 @@
+# Quarto
+/.quarto/
+/_site/
+/_book/
+/.vscode/
+
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.venv
+venv/
+ENV/
+env/
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+.jupyter_cache/
+**/.jupyter_cache/
+
+# Local drafts and test pages
+cap1_backup.qmd
+test-*.qmd
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# Package files
+node_modules/
+*.tgz
+
+# Cache
+.cache/
+*.cache
+
+# Build outputs
+out/
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.backup
+*-backup.*
+
+# Test coverage
+coverage/
+.coverage
+*.cover
+htmlcov/
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+
+# Data files (uncomment if you don't want to track large data files)
+# *.csv
+# *.xlsx
+# *.json
+# *.parquet
+# data/
+
+# Secrets and credentials
+secrets/
+*.pem
+*.key
+*.cert
+
+# Quarto freeze
+_freeze/
+
+# Output files
+*.html
+*.pdf
+!README.pdf
+
+
+**/*.quarto_ipynb
+
+# Keep diagram HTML files in apendices
+!chapters/apendices/diagram-*.html

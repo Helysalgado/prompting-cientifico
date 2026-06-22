@@ -1,0 +1,573 @@
+---
+title: "Component Library"
+subtitle: "Reusable UI components for your course"
+description: "Reference guide for all available components in this template"
+---
+
+# Component Library
+
+This page showcases all the reusable components available in this course template. Copy and customize these components for your own content.
+
+---
+
+## Callouts
+
+### Note
+
+::: {.callout-note}
+## Note Title
+
+This is a note callout. Use it for general information or side notes that complement the main content.
+
+:::
+
+### Tip
+
+::: {.callout-tip}
+## Pro Tip
+
+This is a tip callout. Use it to share helpful hints, best practices, or shortcuts.
+
+:::
+
+### Warning
+
+::: {.callout-warning}
+## Warning
+
+This is a warning callout. Use it to alert students about common mistakes or potential issues.
+
+:::
+
+### Important
+
+::: {.callout-important}
+## Important
+
+This is an important callout. Use it to highlight critical information that students must not miss.
+
+:::
+
+### Caution
+
+::: {.callout-caution}
+## Caution
+
+This is a caution callout. Use it for information that requires extra attention or care.
+
+:::
+
+### Collapsible Callouts
+
+::: {.callout-tip collapse="true"}
+## Click to Expand
+
+This callout is collapsible. Perfect for hints, solutions, or optional content!
+
+:::
+
+---
+
+## Cards
+
+### Basic Card
+
+::: {.card}
+::: {.card-header}
+Card Title
+:::
+::: {.card-body}
+
+This is the content of a basic card. Use cards to group related information.
+
+:::
+::: {.card-footer}
+Footer content or actions
+:::
+:::
+
+### Card Variants
+
+::: {.card .card-primary}
+::: {.card-body}
+
+**Primary Card** - Use for important content or key concepts.
+
+:::
+:::
+
+::: {.card .card-success}
+::: {.card-body}
+
+**Success Card** - Use for completed items or positive outcomes.
+
+:::
+:::
+
+::: {.card .card-warning}
+::: {.card-body}
+
+**Warning Card** - Use for cautionary information.
+
+:::
+:::
+
+::: {.card .card-danger}
+::: {.card-body}
+
+**Danger Card** - Use for critical warnings or errors.
+
+:::
+:::
+
+::: {.card .card-info}
+::: {.card-body}
+
+**Info Card** - Use for supplementary information.
+
+:::
+:::
+
+### Card Grid
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### Card 1
+
+Content for the first card in a grid layout.
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Card 2
+
+Content for the second card in a grid layout.
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### Card 3
+
+Content for the third card in a grid layout.
+
+:::
+:::
+
+:::
+
+---
+
+## Tabs (Panel Sets)
+
+::: {.panel-tabset}
+
+## Tab 1
+
+Content for the first tab. Use tabs to organize related content that users can switch between.
+
+## Tab 2
+
+Content for the second tab. Each tab can contain any type of content including code, images, and text.
+
+## Tab 3
+
+Content for the third tab. Tabs are great for showing different approaches or examples.
+
+:::
+
+---
+
+## Learning Objectives Box
+
+::: {.learning-objectives}
+### Learning Objectives
+
+- Understand how to use reusable components
+- Apply these components in your own course materials
+- Create engaging and interactive content
+- Enhance the learning experience with visual elements
+
+:::
+
+---
+
+## Exercise Box
+
+::: {.exercise-box}
+### Practice Exercise
+
+**Task**: Complete the following challenge to reinforce your understanding.
+
+1. Step one
+2. Step two
+3. Step three
+
+:::
+
+---
+
+## Progress Bars
+
+::: {.progress-container}
+::: {.progress-label}
+<span>Course Progress</span>
+<span>75%</span>
+:::
+::: {.progress}
+<div class="progress-bar" style="width: 75%;"></div>
+:::
+:::
+
+::: {.progress-container}
+::: {.progress-label}
+<span>Module 1 Complete</span>
+<span>100%</span>
+:::
+::: {.progress}
+<div class="progress-bar progress-bar-success" style="width: 100%;"></div>
+:::
+:::
+
+::: {.progress-container}
+::: {.progress-label}
+<span>Warning Level</span>
+<span>85%</span>
+:::
+::: {.progress}
+<div class="progress-bar progress-bar-warning" style="width: 85%;"></div>
+:::
+:::
+
+---
+
+## Alerts
+
+::: {.alert .alert-success}
+**Success!** Your action was completed successfully.
+:::
+
+::: {.alert .alert-info}
+**Information:** Here's some helpful information you should know.
+:::
+
+::: {.alert .alert-warning}
+**Warning:** Please pay attention to this important notice.
+:::
+
+::: {.alert .alert-danger}
+**Error:** Something went wrong. Please check and try again.
+:::
+
+---
+
+## Badges
+
+Use badges to tag or label content:
+
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-info">Info</span>
+
+---
+
+## Buttons
+
+<button class="btn btn-primary">Primary Button</button>
+<button class="btn btn-secondary">Secondary Button</button>
+<button class="btn btn-outline">Outline Button</button>
+
+---
+
+## Feature Boxes
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-rocket"></i>
+:::
+::: {.feature-content}
+
+### Feature Title
+
+Description of this feature or concept. Feature boxes are great for highlighting key capabilities or important concepts.
+
+:::
+:::
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-lightbulb"></i>
+:::
+::: {.feature-content}
+
+### Another Feature
+
+Each feature box can have its own icon and content, making it easy to create visually appealing sections.
+
+:::
+:::
+
+---
+
+## Timeline
+
+::: {.timeline}
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Week 1
+:::
+::: {.timeline-title}
+Introduction
+:::
+
+Getting started with the basics and foundational concepts.
+
+:::
+:::
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Week 2-3
+:::
+::: {.timeline-title}
+Core Concepts
+:::
+
+Deep dive into the main topics and techniques.
+
+:::
+:::
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Week 4
+:::
+::: {.timeline-title}
+Advanced Topics
+:::
+
+Exploring advanced applications and real-world examples.
+
+:::
+:::
+
+:::
+
+---
+
+## Styled Lists
+
+### Checkmark List
+
+<ul class="styled-list">
+<li>First item with checkmark</li>
+<li>Second item with checkmark</li>
+<li>Third item with checkmark</li>
+</ul>
+
+### Numbered Circle List
+
+<ol class="styled-list">
+<li>First item in a circle</li>
+<li>Second item in a circle</li>
+<li>Third item in a circle</li>
+</ol>
+
+---
+
+## Blockquotes
+
+> This is a blockquote. Use it for important quotes, definitions, or emphasis.
+>
+> <cite>— Source or Author Name</cite>
+
+---
+
+## Horizontal Rules
+
+Standard:
+
+---
+
+Thick gradient:
+
+<hr class="thick">
+
+---
+
+## Code Blocks
+
+### Basic Code
+
+```python
+# Standard code block
+def hello_world():
+    print("Hello, World!")
+```
+
+### Code with Filename
+
+```python
+#| filename: "example.py"
+
+# Code with filename displayed
+def greet(name):
+    return f"Hello, {name}!"
+```
+
+### Collapsible Code
+
+```python
+#| code-fold: true
+#| code-summary: "Click to show code"
+
+# This code is initially hidden
+# Students can click to reveal it
+import pandas as pd
+data = pd.read_csv("data.csv")
+```
+
+---
+
+## Chapter Navigation
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-prev}
+::: {.chapter-nav-label}
+Previous
+:::
+::: {.chapter-nav-title}
+Previous Chapter Title
+:::
+:::
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Next
+:::
+::: {.chapter-nav-title}
+Next Chapter Title
+:::
+:::
+
+:::
+
+---
+
+## Accordion / Collapsible Sections
+
+::: {.accordion}
+
+::: {.accordion-item}
+::: {.accordion-header}
+Section 1: Click to Expand
+:::
+::: {.accordion-body}
+
+Content for the first collapsible section. Accordions are great for FAQs or optional content.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Section 2: Another Section
+:::
+::: {.accordion-body}
+
+Content for the second collapsible section.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+Section 3: Final Section
+:::
+::: {.accordion-body}
+
+Content for the third collapsible section.
+
+:::
+:::
+
+:::
+
+---
+
+## Video Container
+
+::: {.video-container}
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+:::
+
+---
+
+## Reading Time Indicator
+
+<div class="reading-time">5 min read</div>
+
+---
+
+## Usage Examples
+
+### Combining Components
+
+You can combine multiple components to create rich, engaging content:
+
+::: {.card .card-primary}
+::: {.card-body}
+
+#### Combined Example
+
+::: {.callout-tip}
+Start with a tip inside a card for maximum emphasis!
+:::
+
+Then add regular content, code blocks, or any other components.
+
+```python
+print("Components work together seamlessly!")
+```
+
+:::
+:::
+
+### Responsive Design
+
+All components are fully responsive and work great on mobile, tablet, and desktop devices.
+
+---
+
+## Copy & Paste
+
+To use any component, simply copy the code from this page and paste it into your `.qmd` files. Customize the content, colors, and styles as needed for your course.
+
+::: {.callout-success}
+## Ready to Use!
+
+All components are ready to use out of the box. No additional setup required!
+
+:::
+

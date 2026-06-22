@@ -1,0 +1,533 @@
+---
+title: "Prompting Científico con Inteligencia Artificial"
+subtitle: "Pensamiento científico, validación y reproducibilidad con IA"
+author: "Heladia Salgado"
+date: last-modified
+description: "Bienvenidos al curso de Prompting Científico con Inteligencia Artificial, que te permitirá aprender habilidades para diseñar instrucciones rigurosas y evaluar críticamente las respuestas generadas por IA."
+image: "assets/images/og-image.png"
+---
+
+::: {.hero-section style="text-align: left; padding: 3rem 0;"}
+
+## Bienvenido al curso! 🚀
+
+*Prompting científico para interactuar con IA con rigor y pensamiento crítico.*
+
+
+<div style="margin: 2rem 0;">
+<button class="btn btn-primary" onclick="window.location.href='chapters/capitulo1/index.html'">
+<i class="fas fa-play-circle"></i> Comenzar
+</button>
+<button class="btn btn-outline" onclick="window.location.href='about.html'">
+<i class="fas fa-info-circle"></i> Más información
+</button>
+</div>
+
+:::
+
+## Qué aprenderás ?
+
+::: {.card-grid}
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-brain"></i>
+:::
+::: {.feature-content}
+
+### Prompting Científico
+
+Diseñar instrucciones claras, estructuradas y justificadas para sistemas de IA.
+
+:::
+:::
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-code"></i>
+:::
+::: {.feature-content}
+
+### Pensamiento Crítico
+
+Evaluar, cuestionar y validar respuestas generadas por IA.
+
+:::
+:::
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-project-diagram"></i>
+:::
+::: {.feature-content}
+
+### Metodología y Rigor
+
+Aplicar criterios científicos, reproducibilidad y trazabilidad en el uso de IA.
+
+:::
+:::
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-users"></i>
+:::
+::: {.feature-content}
+
+### Desarrollo Asistido por IA
+
+Usar IA de forma metodológica en el desarrollo de software y proyectos técnicos.
+
+:::
+:::
+
+:::
+
+
+
+## Estructura del Taller
+
+::: {.timeline}
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Módulo 1 — 4 h
+:::
+::: {.timeline-title}
+Fundamentos del Prompting Científico
+:::
+
+Este módulo introduce el funcionamiento de los modelos de lenguaje (LLMs) como sistemas de predicción probabilística condicionada \(P(y \mid x)\), su proceso de alineamiento (RLHF) y sus límites epistemológicos. Se establece la diferencia entre plausibilidad textual y validez científica, y se introduce el prompt como instrumento metodológico que condiciona el tipo de inferencia producida.
+
+**Módulo**: 1 | **Duración estimada**: 4 horas
+
+:::
+:::
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Módulo 2 — 4 h
+:::
+::: {.timeline-title}
+Diseño científico de prompts para sistemas de inteligencia artificial
+:::
+
+Este módulo se centra en el diseño de prompts como una práctica científica y metodológica. Se estudian estrategias para formular instrucciones claras, estructuradas y reproducibles, considerando el contexto, los supuestos y los criterios de evaluación necesarios para interactuar de manera rigurosa con sistemas de inteligencia artificial en bioinformática, genética y desarrollo de software.
+
+**Módulo**: 2 | **Duración estimada**: 4 horas
+
+:::
+:::
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Módulo 3 — 4 h
+:::
+::: {.timeline-title}
+Anatomía del prompt científico: siete componentes
+:::
+
+Este módulo formaliza los siete componentes del prompt científico (Rol, Contexto, Alcance, Tarea, Restricciones, Salida esperada, Verificación) y los niveles de riesgo epistemológico según el verbo utilizado. Se desarrolla criterio para diseñar prompts evaluables y se introduce la distinción entre Checkpoint y Gate como mecanismos de control.
+
+**Módulo**: 3 | **Duración estimada**: 4 horas
+
+:::
+:::
+
+::: {.timeline-item}
+::: {.timeline-marker}
+:::
+::: {.timeline-content}
+::: {.timeline-date}
+Módulo 4 — 4 h
+:::
+::: {.timeline-title}
+Protocolos Multi-fase de Prompting Científico
+:::
+
+Este módulo amplía la unidad de diseño del prompt individual a la arquitectura de interacción completa. Se aprende a diseñar protocolos de cinco fases con separación epistémica real: cada fase tiene una función diferenciada, un nivel de inferencia explícito y un punto de control humano (checkpoint o gate) antes de avanzar. Se aplica al caso de estudio MalT y a un proyecto integrador con artículo propio.
+
+**Módulo**: 4 | **Duración estimada**: 4 horas
+
+:::
+:::
+
+:::
+
+
+
+## Características principales
+
+::: {.card-grid}
+
+::: {.card .card-primary}
+::: {.card-body}
+
+#### <i class="fas fa-sitemap"></i> Enfoque Epistemológico
+
+El curso no se limita al uso instrumental de la IA. Se centra en el control del tipo de afirmaciones producidas, el análisis del compromiso epistemológico y la responsabilidad científica del usuario.
+
+:::
+:::
+
+::: {.card .card-info}
+::: {.card-body}
+
+#### <i class="fas fa-dna"></i> Casos Aplicados en Bioinformática y Genética
+
+Los ejemplos y ejercicios están anclados en problemas reales de genética, análisis de datos ómicos y desarrollo técnico, evitando escenarios abstractos o genéricos.
+
+:::
+:::
+
+::: {.card .card-success}
+::: {.card-body}
+
+#### <i class="fas fa-check-double"></i> Verificación y Reproducibilidad
+
+Cada prompt se diseña para ser evaluable, contrastable y reproducible. Se entrenan mecanismos de verificación explícitos y criterios de validación humana.
+
+:::
+:::
+
+::: {.card .card-warning}
+::: {.card-body}
+
+#### <i class="fas fa-layer-group"></i> Integración Metodológica
+
+El curso articula diseño de prompts, evaluación crítica e iteración técnica dentro de un marco coherente que culmina en un proyecto integrador.
+
+:::
+:::
+
+:::
+
+
+
+## Requisitos Previos
+
+::: {.callout-note}
+## Que necesitas saber
+
+### Prerrequisitos generales
+
+- Conocimientos básicos de programación o lógica computacional.
+- Comprensión básica del método científico y del razonamiento crítico.
+- Experiencia previa en contextos científicos, técnicos o de análisis de datos (deseable).
+- Disposición para reflexionar críticamente sobre el uso de la inteligencia artificial.
+- Actitud abierta al aprendizaje metodológico y a la evaluación rigurosa de resultados.
+
+### Prerrequisitos técnicos
+
+- Contar con acceso a una herramienta de IA conversacional (por ejemplo, ChatGPT u otra equivalente).
+- Tener acceso a un entorno de desarrollo para programación, como Visual Studio Code, Cursor u otro editor similar.
+- Capacidad para ejecutar código localmente o en un entorno controlado (terminal, notebooks o IDE).
+- Acceso a internet para interactuar con herramientas de IA y consultar documentación técnica.
+
+
+:::
+
+
+
+## Información del curso
+
+::: {.panel-tabset}
+
+## Calendario y ruta de lectura
+
+El taller se organiza en **cuatro módulos temáticos** (sidebar: Módulo 1 → 2 → 3 → 4). La tabla siguiente conecta cada **encuentro** con la lectura previa y las evidencias.
+
+| Sesión | Bloque | Lectura previa | Actividad en clase | Duración | Entregable |
+|--------|--------|----------------|-------------------|----------|------------|
+| 1 | Mód. 1 — Actos 1–3 | — | Actividades de tokenización; \(P(y \mid x)\) y RLHF | 2 h | — |
+| 2 | Mód. 1 — Acto 4 + lectura async | Tabla de modelos (async) | Discusión complacencia y alineamiento; cierre del mapa LLM | 2 h | [Checkpoint Mód. 1](chapters/capitulo1/index.html#checkpoint--antes-del-capítulo-2) |
+| 3 | Mód. 2 — §1–§3 | Mód. 2 (inicio) | Cinco componentes del prompt; Rol, Contexto, Tarea | 2 h | — |
+| 4 | Mód. 2 — §4–§5 | Mód. 2 (completo) | Restricciones, Salida esperada; técnicas zero-shot, few-shot, multi-step | 2 h | [Checkpoint Mód. 2](chapters/capitulo2/index.html#checkpoint--antes-del-capítulo-3) |
+| 5 | Mód. 3 — §1–§4 | Mód. 3 (inicio) | Siete componentes; verbos y riesgo epistemológico; modos exploratorio y verificable | 2 h | — |
+| 6 | Mód. 3 — §5–§7 | Mód. 3 (completo) | Prompts buenos y malos; ejercicio "Rescata el prompt" | 2 h | [Checkpoint Mód. 3](chapters/capitulo3/index.html#checkpoint--antes-del-capítulo-4) |
+| 7 | Mód. 4 — protocolo MalT | Mód. 4 (inicio + caso MalT) | Fases 1–4 en vivo; gates epistémicos | 2 h | Avance documentado |
+| 8 | Revisión y cierre | Entrega completa | [Discusión post-entrega](chapters/capitulo4/index.html#guia-discusion-post-entrega) | 2 h | Proyecto final |
+
+**Convención:** Módulo 1 = fundamentos del LLM (tokens → P(y|x) → RLHF). Módulo 2 = diseño de prompts (5 componentes, técnicas). Módulo 3 = anatomía del prompt científico (7 componentes, verificación). Módulo 4 = protocolos multi-fase (caso MalT, gates). *Lectura async* = RLAIF, DPO, tabla de modelos.
+
+| Sesiones | Bloque temático | Horas | Evidencias |
+|----------|----------------|-------|------------|
+| 1–2 | Módulo 1 — Fundamentos del LLM | 4 h | Checkpoint 1 + participación |
+| 3–4 | Módulo 2 — Diseño de prompts científicos | 4 h | Checkpoint 2 + ejercicios |
+| 5–6 | Módulo 3 — Anatomía del prompt científico | 4 h | Checkpoint 3 + ejercicios |
+| 7–8 | Módulo 4 — Protocolos multi-etapa y proyecto | 4 h | Checkpoint 4 + Proyecto final (40 %) |
+| **Total** | | **~16 h** | |
+
+:::
+
+## Evaluación
+
+| Componente | Porcentaje | Descripción |
+|------------|------------|-------------|
+| Participación crítica | 10% | Discusión fundamentada y reflexión sobre el uso de IA |
+| Ejercicios de prompting | 25% | Diseño, iteración y justificación de prompts |
+| Prácticas técnicas | 25% | Uso metodológico de IA en contextos científicos y de software |
+| Proyecto final | 40% | Integración de prompting científico, validación y rigor metodológico |
+
+**Escala de evaluación**  
+- A: 90–100  
+- B: 80–89  
+- C: 70–79  
+- D: 60–69  
+- F: < 60  
+
+
+
+## Recursos
+
+### Materiales requeridos
+
+- Material de lectura y notas del curso (proporcionados a lo largo del módulo).
+- Computadora personal con acceso a internet y capacidad para ejecutar código localmente.
+- Entorno de desarrollo para programación (por ejemplo, Visual Studio Code, Cursor u otro editor equivalente).
+- Acceso a una herramienta de IA conversacional (por ejemplo, ChatGPT u otro sistema equivalente).
+
+### Recursos recomendados
+
+- Documentación oficial de lenguajes y herramientas de programación utilizados durante el curso.
+- Artículos y lecturas seleccionadas sobre inteligencia artificial, pensamiento crítico y metodología científica.
+- Recursos en línea sobre buenas prácticas en desarrollo de software y reproducibilidad.
+- Guías y ejemplos de *prompting* aplicados a contextos científicos y técnicos (proporcionados durante el curso).
+
+### Apoyo y comunicación
+
+- **Horario de asesorías**: Se indicará durante el curso.
+- **Espacio de discusión**: Plataforma del curso para preguntas, comentarios y discusión académica.
+- **Correo de contacto**: heladia@ccg.unam.mx
+
+
+
+## Resultados de aprendizaje
+
+Al finalizar este curso, el estudiante será capaz de:
+
+::: {.learning-objectives}
+
+- **Comprender** los fundamentos epistemológicos y metodológicos del uso de la inteligencia artificial en contextos científicos y técnicos.
+- **Diseñar** prompts de manera rigurosa, clara y estructurada para interactuar con sistemas de IA.
+- **Evaluar** críticamente las respuestas generadas por IA, identificando errores, sesgos, supuestos y alucinaciones.
+- **Iterar y refinar** prompts con base en criterios científicos y objetivos definidos.
+- **Aplicar** prompting científico en el desarrollo de software asistido por IA, manteniendo buenas prácticas y responsabilidad técnica.
+- **Justificar** decisiones y resultados derivados del uso de IA mediante razonamiento crítico y evidencia.
+
+:::
+
+
+## Arquitectura conceptual del curso
+
+Este curso no se organiza únicamente por temas, sino por una **cadena conceptual acumulativa** que articula el uso de la IA con criterios científicos.
+
+La progresión lógica es la siguiente:
+
+1. El modelo no razona; genera texto condicionado por una distribución probabilística \( P(y | x) \).
+2. El prompt configura el contexto que condiciona esa generación.
+3. El verbo especifica el tipo de inferencia solicitada.
+4. El tipo de inferencia determina el tipo de afirmación producida.
+5. El tipo de afirmación implica un grado de compromiso epistemológico.
+6. A mayor compromiso, mayor riesgo epistemológico.
+7. Las restricciones acotan el espacio de generación.
+8. La verificación habilita evaluación externa.
+9. El juicio humano valida, cuestiona o refuta lo generado.
+
+Esta arquitectura resume el principio central del curso:  
+**la IA no produce conocimiento por sí misma; el conocimiento emerge cuando las salidas generadas son diseñadas, evaluadas y validadas bajo criterios científicos.**
+
+
+A continuación se muestra esta progresión de manera esquemática:
+
+```{mermaid}
+%%| echo: false
+flowchart LR
+
+  A["Modelo<br/>(Generación probabilística<br/>P(y | x))"] 
+  --> B["Prompt<br/>(Configuración del contexto)"]
+  --> C["Verbo<br/>(Tipo de inferencia solicitada)"]
+  --> D["Inferencia<br/>(Operación cognitiva)"]
+  --> E["Afirmación<br/>(Tipo de claim producido)"]
+  --> F["Compromiso<br/>Epistemológico"]
+  --> G["Riesgo<br/>Epistemológico"]
+  --> H["Restricciones<br/>(Acotan generación)"]
+  --> I["Verificación<br/>(Criterios explícitos)"]
+  --> J["Juicio Humano<br/>(Aceptar / Cuestionar / Refutar)"]
+```
+
+## Conoce a tu instructora
+
+::: {.card}
+::: {.card-body}
+
+<div style="display: flex; align-items: center; gap: 2rem;">
+
+<div style="flex-shrink: 0;">
+<img src="assets/images/instructor-photo.png" alt="Instructora" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+</div>
+
+<div>
+
+### {{< meta author >}}
+
+**Lic. en Informática**  
+Centro de Ciencias Genómicas, UNAM
+
+Técnica Académica y docente en bioinformática y análisis computacional, con experiencia en el uso metodológico y crítico de herramientas de inteligencia artificial en contextos científicos y de desarrollo de software. Su trabajo se centra en el diseño de procesos reproducibles, el pensamiento científico aplicado y la formación de criterio para el uso responsable de la IA en investigación y educación.
+
+<div style="margin-top: 1rem;">
+<a href="mailto:heladia@ccg.unam.mx" class="btn btn-outline"><i class="fas fa-envelope"></i> Email</a>
+<a href="https://scholar.google.com/citations?user=ezI9LUUAAAAJ&hl=es" class="btn btn-outline"><i class="fas fa-globe"></i> Website</a>
+<a href="https://github.com/Helysalgado" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+</div>
+
+</div>
+
+</div>
+
+
+:::
+:::
+
+
+
+## Testimonios
+
+<!--
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+> "This course completely changed how I approach [topic]. The hands-on exercises were incredibly valuable!"
+>
+> <cite>— Student Name, Previous Cohort</cite>
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+> "Clear explanations, practical examples, and excellent support. Highly recommended!"
+>
+> <cite>— Student Name, Previous Cohort</cite>
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+> "The best online course I've taken. The content is well-organized and engaging."
+>
+> <cite>— Student Name, Previous Cohort</cite>
+
+:::
+:::
+
+:::
+
+-->
+
+## Preguntas frecuentes
+
+::: {.accordion}
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Cuál es la duración del curso?
+:::
+::: {.accordion-body}
+
+El taller está diseñado para desarrollarse en aproximadamente **16 horas** distribuidas en 8 sesiones de 2 horas cada una. En formato intensivo puede impartirse en 2 días. 
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Qué ocurre si me atraso en alguna actividad?
+:::
+::: {.accordion-body}
+
+El curso promueve un aprendizaje reflexivo y metodológico. Si enfrentas dificultades o retrasos, se recomienda comunicarte con la instructora para acordar estrategias de seguimiento y recuperación, priorizando la comprensión sobre la velocidad.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Necesito experiencia previa en inteligencia artificial?
+:::
+::: {.accordion-body}
+
+No se requiere experiencia previa en inteligencia artificial. El curso se enfoca en el uso crítico, metodológico y científico de estos sistemas, partiendo de fundamentos conceptuales y prácticos.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Este curso es solo teórico?
+:::
+::: {.accordion-body}
+
+No. El curso combina fundamentos conceptuales con ejercicios prácticos de *prompting* y desarrollo asistido por IA, enfatizando la evaluación crítica, la validación y la aplicación responsable en contextos científicos y técnicos.
+
+:::
+:::
+
+::: {.accordion-item}
+::: {.accordion-header}
+¿Puedo acceder a los materiales después de finalizar el curso?
+:::
+::: {.accordion-body}
+
+Sí. Los materiales del curso permanecerán disponibles para su consulta posterior, permitiendo revisar contenidos, ejemplos y recursos una vez concluido el curso.
+
+:::
+:::
+
+:::
+
+
+
+## Mantente en contacto
+
+::: {.card}
+::: {.card-body style="text-align: center;"}
+
+### Comunidad y comunicación
+
+<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+
+<a href="https://github.com/Helysalgado/" class="btn btn-outline">
+<i class="fab fa-github fa-2x"></i>
+</a>
+
+<a href="https://scholar.google.com/citations?user=ezI9LUUAAAAJ&hl=es" class="btn btn-outline">
+<i class="fas fa-graduation-cap fa-2x"></i>
+</a>
+
+<a href="mailto:heladia@ccg.unam.mx" class="btn btn-outline">
+<i class="fas fa-envelope fa-2x"></i>
+</a>
+
+</div>
+
+
+:::
+:::
+

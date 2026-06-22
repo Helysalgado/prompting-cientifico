@@ -1,0 +1,370 @@
+---
+title: "Recursos Adicionales"
+subtitle: "Materiales curados para profundizar en prompting científico"
+date: last-modified
+description: "Guías, herramientas y recursos académicos sobre IA y prompting para investigación"
+categories: [recursos, referencias, herramientas]
+---
+
+## Introducción
+
+Este apéndice reúne **recursos externos curados** que puedes consultar para profundizar en:
+
+- Diseño de prompts científicos
+- Uso responsable de modelos tipo GPT
+- Apoyo a análisis académicos y bioinformáticos
+
+No son obligatorios, pero están **alineados con el enfoque crítico y reproducible** del curso.
+
+
+
+## Guías Generales de Prompt Engineering
+
+Estos recursos explican **cómo estructurar prompts efectivos**, con ejemplos y fundamentos conceptuales.
+
+::: {.card-grid}
+
+::: {.card .card-info}
+::: {.card-body}
+
+#### <i class="fab fa-github"></i> Prompt Engineering Guide — DAIR.AI
+
+Repositorio y guía ampliamente citada sobre técnicas de prompting, con ejemplos prácticos y taxonomías.
+
+<a href="https://github.com/dair-ai/Prompt-Engineering-Guide" class="btn btn-primary" target="_blank">
+<i class="fas fa-external-link-alt"></i> Ver en GitHub
+</a>
+
+:::
+:::
+
+::: {.card .card-info}
+::: {.card-body}
+
+#### <i class="fas fa-graduation-cap"></i> Prompting Guide (promptingguide.ai)
+
+Guía interactiva con introducciones claras, ejemplos y patrones reutilizables.
+
+<a href="https://www.promptingguide.ai/" class="btn btn-primary" target="_blank">
+<i class="fas fa-external-link-alt"></i> Visitar Sitio
+</a>
+
+:::
+:::
+
+::: {.card .card-info}
+::: {.card-body}
+
+#### <i class="fas fa-robot"></i> OpenAI — Prompt Engineering Guide
+
+Documentación oficial con recomendaciones para controlar salidas de modelos GPT.
+
+<a href="https://platform.openai.com/docs/guides/prompt-engineering" class="btn btn-primary" target="_blank">
+<i class="fas fa-external-link-alt"></i> Ver Documentación
+</a>
+
+:::
+:::
+
+:::
+
+
+
+## Recursos Académicos y Marcos Conceptuales
+
+Estos materiales discuten el prompting desde una **perspectiva académica y metodológica**.
+
+::: {.card-grid}
+
+::: {.card .card-success}
+::: {.card-body}
+
+#### <i class="fas fa-file-pdf"></i> The Prompt Canvas (arXiv)
+
+Marco estructurado para enseñar y analizar prompts de forma sistemática.
+
+**Referencia**: arXiv:2412.05127
+
+<a href="https://arxiv.org/abs/2412.05127" class="btn btn-outline" target="_blank">
+<i class="fas fa-download"></i> Descargar Paper
+</a>
+
+:::
+:::
+
+::: {.card .card-success}
+::: {.card-body}
+
+#### <i class="fas fa-book"></i> A Systematic Survey of Prompt Engineering
+
+Revisión académica de técnicas, categorías y desafíos del prompting en LLMs.
+
+**Referencia**: arXiv:2406.06608
+
+<a href="https://arxiv.org/abs/2406.06608" class="btn btn-outline" target="_blank">
+<i class="fas fa-download"></i> Descargar Paper
+</a>
+
+:::
+:::
+
+:::
+
+
+
+## Herramientas con IA para Investigación Científica
+
+Plataformas que permiten **aplicar prompts directamente** a literatura científica o flujos de análisis.
+
+::: {.card-grid}
+
+::: {.card .card-primary}
+::: {.card-body}
+
+#### <i class="fas fa-flask"></i> SciSpace
+
+Plataforma para interactuar con artículos científicos (PDFs), hacer preguntas y obtener resúmenes guiados por IA.
+
+**Funcionalidades:**
+- Leer y anotar papers con IA
+- Explicar conceptos complejos
+- Generar resúmenes automáticos
+
+<a href="https://typeset.io/" class="btn btn-primary" target="_blank">
+<i class="fas fa-external-link-alt"></i> Visitar SciSpace
+</a>
+
+:::
+:::
+
+::: {.card .card-primary}
+::: {.card-body}
+
+#### <i class="fas fa-network-wired"></i> Research Rabbit
+
+Herramienta para exploración de literatura, redes de citación y descubrimiento de trabajos relacionados.
+
+**Funcionalidades:**
+- Mapas de citaciones
+- Recomendaciones de papers
+- Seguimiento de autores
+
+<a href="https://www.researchrabbit.ai/" class="btn btn-primary" target="_blank">
+<i class="fas fa-external-link-alt"></i> Visitar Research Rabbit
+</a>
+
+:::
+:::
+
+:::
+
+
+
+## Prompts y Uso de IA en Contextos Académicos
+
+Recursos con **ejemplos de prompts aplicados a investigación y docencia**.
+
+::: {.card-grid}
+
+::: {.card .card-warning}
+::: {.card-body}
+
+#### <i class="fas fa-lightbulb"></i> Prompts para la Academia — Lluís Codina
+
+Colección comentada de prompts útiles para investigación, revisión de literatura y escritura académica.
+
+**Contenido:**
+- Prompts para búsqueda bibliográfica
+- Análisis de literatura
+- Escritura científica
+- Preparación de presentaciones
+
+<a href="https://www.lluiscodina.com/prompts-inteligencia-artificial-academia/" class="btn btn-outline" target="_blank">
+<i class="fas fa-external-link-alt"></i> Ver Colección
+</a>
+
+:::
+:::
+
+::: {.card .card-warning}
+::: {.card-body}
+
+#### <i class="fas fa-book-open"></i> Manual de Buenas Prácticas (ResearchGate)
+
+Documento académico centrado en el uso responsable de prompts en educación superior.
+
+**Temas:**
+- Ética en uso de IA
+- Buenas prácticas académicas
+- Casos de estudio
+
+<a href="https://www.researchgate.net/publication/398211173" class="btn btn-outline" target="_blank">
+<i class="fas fa-external-link-alt"></i> Ver Documento
+</a>
+
+:::
+:::
+
+:::
+
+
+
+## Uso Responsable en el Taller
+
+::: {.callout-important}
+## Uso Responsable
+
+Estos recursos deben usarse como **apoyo**, no como autoridad final.
+
+**Cualquier resultado obtenido con IA debe:**
+
+- ✓ Poder verificarse
+- ✓ Contrastarse con datos o literatura
+- ✓ Documentarse adecuadamente
+
+> *El objetivo no es usar más IA, sino usarla mejor.*
+
+:::
+
+
+
+## Recursos por Categoría
+
+### Para Principiantes
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-seedling"></i>
+:::
+::: {.feature-content}
+
+#### Empezando con Prompting
+
+1. **[Prompting Guide - Introducción](https://www.promptingguide.ai/es/introduction/tips)**: Consejos básicos
+2. **[Ejemplos Prácticos](https://www.promptingguide.ai/es/introduction/examples)**: Casos de uso comunes
+3. **Glosario de este curso**: Términos fundamentales
+
+:::
+:::
+
+### Para Usuarios Intermedios
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-chart-line"></i>
+:::
+::: {.feature-content}
+
+#### Mejorando tus Prompts
+
+1. **DAIR.AI Guide**: Técnicas avanzadas (Zero-shot, Few-shot, CoT)
+2. **The Prompt Canvas**: Marco sistemático de diseño
+3. **Patrones Avanzados** (este curso): Aplicación en ciencia
+
+:::
+:::
+
+### Para Investigadores
+
+::: {.feature-box}
+::: {.feature-icon}
+<i class="fas fa-microscope"></i>
+:::
+::: {.feature-content}
+
+#### IA en Investigación
+
+1. **SciSpace**: Análisis de literatura
+2. **Research Rabbit**: Exploración de redes de citación
+3. **Prompt Survey (arXiv)**: Estado del arte en técnicas
+
+:::
+:::
+
+
+
+## Comunidades y Foros
+
+::: {.card-grid}
+
+::: {.card}
+::: {.card-body}
+
+#### <i class="fab fa-discord"></i> Comunidades Online
+
+- **DAIR.AI Discord**: Discusiones técnicas
+- **r/PromptEngineering**: Reddit sobre prompting
+- **LinkedIn Groups**: Grupos profesionales de IA
+
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+
+#### <i class="fas fa-comments"></i> Foros Académicos
+
+- **ResearchGate**: Discusiones académicas
+- **Stack Overflow**: Preguntas técnicas
+- **BioStars**: Comunidad bioinformática
+
+:::
+:::
+
+:::
+
+
+
+## Manténte Actualizado
+
+::: {.callout-tip}
+## Recursos en Evolución
+
+El campo de IA generativa evoluciona rápidamente. Te recomendamos:
+
+- **Seguir a expertos** en redes sociales académicas
+- **Suscribirte a newsletters** especializados (ej: The Batch de DeepLearning.AI)
+- **Revisar arXiv regularmente** en categorías cs.CL y cs.AI
+- **Participar en webinars** y conferencias online
+
+:::
+
+
+
+## Contribuye
+
+::: {.callout-note}
+## ¿Encontraste un Recurso Útil?
+
+Si descubres recursos valiosos que deberían estar en esta lista:
+
+- Contacta al instructor
+- Abre un issue en el repositorio del curso
+- Comparte en el foro de discusión
+
+:::
+
+
+
+::: {.chapter-nav}
+
+::: {.chapter-nav-item .chapter-nav-prev}
+::: {.chapter-nav-label}
+Anterior
+:::
+::: {.chapter-nav-title}
+Glosario
+:::
+:::
+
+::: {.chapter-nav-item .chapter-nav-next}
+::: {.chapter-nav-label}
+Siguiente
+:::
+::: {.chapter-nav-title}
+Ejercicios Prácticos
+:::
+:::
+
+:::
+

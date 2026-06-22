@@ -1329,6 +1329,10 @@ Si respondiste con seguridad las tres, comprueba si no hay *ilusión de competen
 ::: {#refs}
 :::
 
+::: {.callout-tip title="¿Retroalimentación sobre este módulo?"}
+Tu opinión ayuda a mejorar el curso. [Envía comentarios o reporta dudas](../../retroalimentacion.qmd).
+:::
+
 ::: {.chapter-nav}
 
 ::: {.chapter-nav-item .chapter-nav-prev}

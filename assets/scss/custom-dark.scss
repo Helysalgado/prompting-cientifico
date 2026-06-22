@@ -157,3 +157,15 @@ img {
   border: 1px solid $gray-300;
 }
 
+// Google Forms embed on feedback page
+.feedback-form-embed {
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 800px;
+    border: 1px solid $gray-600;
+    border-radius: $border-radius;
+    background: $body-bg;
+  }
+}
+

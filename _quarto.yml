@@ -60,6 +60,9 @@ website:
       - text: "Recursos"
         icon: box-arrow-down
         href: resources/index.qmd
+      - text: "Retroalimentación"
+        icon: chat-left-text-fill
+        href: retroalimentacion.qmd
     right:
       - icon: github
         href: "https://github.com/Helysalgado/prompting-cientifico"
@@ -113,6 +116,8 @@ website:
       - section: "---"
       - text: "📥 Recursos"
         href: resources/index.qmd
+      - text: "💬 Retroalimentación"
+        href: retroalimentacion.qmd
       - text: "ℹ️ Acerca de"
         href: about.qmd
   
@@ -245,6 +250,8 @@ editor: visual
 author: "Heladia Salgado"
 year: 2026
 email: "heladia@ccg.unam.mx"
+feedback-form-view-url: "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform"
+feedback-form-embed-url: "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform?embedded=true"
 institution: "Centro de Ciencias Genómicas, UNAM"
 license: "CC BY 4.0"
 license-url: "https://creativecommons.org/licenses/by/4.0/"

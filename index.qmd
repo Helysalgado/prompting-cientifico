@@ -511,7 +511,11 @@ Sí. Los materiales del curso permanecerán disponibles para su consulta posteri
 
 ### Comunidad y comunicación
 
-<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+
+<a href="retroalimentacion.qmd" class="btn btn-primary">
+<i class="fas fa-comment-dots"></i> Retroalimentación
+</a>
 
 <a href="https://github.com/Helysalgado/" class="btn btn-outline">
 <i class="fab fa-github fa-2x"></i>

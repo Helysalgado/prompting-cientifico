@@ -743,6 +743,10 @@ Recursos complementarios en español: @quintero2025; @promptingguide2025.
 
 **Crédito de imagen:** Esquema "Ecosistema IA generativa" — <https://madsblog.net/2025/01/06/generative-ai-conceptos-clave/>
 
+::: {.callout-tip title="¿Retroalimentación sobre este módulo?"}
+Tu opinión ayuda a mejorar el curso. [Envía comentarios o reporta dudas](../../retroalimentacion.qmd).
+:::
+
 ::: {.chapter-nav}
 
 ::: {.chapter-nav-item .chapter-nav-prev}

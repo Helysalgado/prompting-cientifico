@@ -606,6 +606,10 @@ Recursos complementarios en español: @quintero2025; @promptingguide2025.
 ::: {#refs}
 :::
 
+::: {.callout-tip title="¿Retroalimentación sobre este módulo?"}
+Tu opinión ayuda a mejorar el curso. [Envía comentarios o reporta dudas](../../retroalimentacion.qmd).
+:::
+
 ::: {.chapter-nav}
 
 ::: {.chapter-nav-item .chapter-nav-next}

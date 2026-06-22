@@ -109,6 +109,13 @@ Salgado Osorio, H. (2026). *Prompting Científico con Inteligencia Artificial*. 
 
 ---
 
+## Retroalimentación
+
+¿Tienes comentarios sobre el curso, el material o esta página?
+[Envía tu retroalimentación](../retroalimentacion.qmd) — el formulario es anónimo y el correo es opcional.
+
+---
+
 ## Licencia
 
 ::: {.callout-note}

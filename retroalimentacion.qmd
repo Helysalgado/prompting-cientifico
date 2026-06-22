@@ -32,7 +32,7 @@ El correo electrónico es **opcional**; puedes enviar comentarios de forma anón
 <iframe
   src="{{< meta feedback-form-embed-url >}}"
   width="100%"
-  height="1400"
+  height="1518"
   frameborder="0"
   marginheight="0"
   marginwidth="0"

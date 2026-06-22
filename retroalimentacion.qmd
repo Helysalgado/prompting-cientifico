@@ -22,15 +22,17 @@ El correo electrónico es **opcional**; puedes enviar comentarios de forma anón
 ::: {.card}
 ::: {.card-body}
 
+```{=html}
 <div style="text-align: center; margin-bottom: 1.25rem;">
-<a href="{{< meta feedback-form-view-url >}}" class="btn btn-primary" target="_blank" rel="noopener">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSddwCzvMr2dp0VrSL_2D5keaoAp6wc0h9zXYGX_VenVFi7TFQ/viewform?usp=header"
+   class="btn btn-primary" target="_blank" rel="noopener">
 <i class="fas fa-external-link-alt"></i> Abrir formulario en una pestaña nueva
 </a>
 </div>
 
 <div class="feedback-form-embed">
 <iframe
-  src="{{< meta feedback-form-embed-url >}}"
+  src="https://docs.google.com/forms/d/e/1FAIpQLSddwCzvMr2dp0VrSL_2D5keaoAp6wc0h9zXYGX_VenVFi7TFQ/viewform?embedded=true"
   width="100%"
   height="1518"
   frameborder="0"
@@ -41,6 +43,7 @@ El correo electrónico es **opcional**; puedes enviar comentarios de forma anón
   Cargando formulario…
 </iframe>
 </div>
+```
 
 :::
 :::
@@ -57,7 +60,7 @@ dar seguimiento a tu comentario, cuando sea necesario.
 
 | Canal | Cuándo usarlo |
 |-------|----------------|
-| [Formulario de retroalimentación]({{< meta feedback-form-view-url >}}){target="_blank"} | Comentarios generales, dudas pedagógicas, evaluación de módulos |
+| [Formulario de retroalimentación](https://docs.google.com/forms/d/e/1FAIpQLSddwCzvMr2dp0VrSL_2D5keaoAp6wc0h9zXYGX_VenVFi7TFQ/viewform?usp=header){target="_blank"} | Comentarios generales, dudas pedagógicas, evaluación de módulos |
 | [Reportar error en GitHub](https://github.com/Helysalgado/prompting-cientifico/issues/new) | Errores concretos en una página (typo, enlace roto, figura) |
 | [heladia@ccg.unam.mx](mailto:heladia@ccg.unam.mx) | Asuntos que requieren conversación directa |
 

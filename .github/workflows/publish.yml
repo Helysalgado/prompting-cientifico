@@ -24,8 +24,21 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install PDF and diagram dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+          quarto install tinytex
+          npm install -g @mermaid-js/mermaid-cli
+
       - name: Render course
         run: quarto render
+
+      - name: Render chapter exports
+        run: |
+          for ch in chapters/capitulo{1,2,3,4}/index.qmd; do
+            quarto render "$ch" --to pdf,docx
+          done
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

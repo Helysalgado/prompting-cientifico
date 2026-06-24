@@ -4,7 +4,18 @@ subtitle: "Marco conceptual y estructura formal del prompt"
 date: last-modified
 description: "Fundamentos del prompting científico: marco epistemológico, estructura formal del prompt y bases técnicas para una práctica rigurosa y trazable."
 categories: [prompting científico, fundamentos, epistemología]
+format:
+  html:
+    code-copy: true
+    code-overflow: wrap
+    format-links: [pdf, docx]
+  pdf: default
+  docx: default
 ---
+
+::: {.callout-note title="Descargar este módulo"}
+También disponible en [PDF](index.pdf) y [Word](index.docx).
+:::
 
 ::: {.learning-objectives}
 ### Objetivos de aprendizaje {.unnumbered}

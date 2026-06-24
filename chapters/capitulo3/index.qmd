@@ -8,7 +8,14 @@ format:
   html:
     code-copy: true
     code-overflow: wrap
+    format-links: [pdf, docx]
+  pdf: default
+  docx: default
 ---
+
+::: {.callout-note title="Descargar este módulo"}
+También disponible en [PDF](index.pdf) y [Word](index.docx).
+:::
 
 ## Introducción
 
@@ -1280,6 +1287,7 @@ Demostrar que el prompt funciona como un **instrumento de control inferencial**,
 
 ::: {.callout-tip title="Autoevaluación formativa (~5 min)"}
 Responde por escrito **sin consultar el texto**.
+:::
 
 1. Elige **uno** de los siete componentes (ROLE, CONTEXTO, TAREA, ALCANCE, RESTRICCIONES, SALIDA ESPERADA, VERIFICACIÓN) y explica en dos oraciones por qué omitirlo afecta la evaluabilidad de la respuesta.
 
@@ -1289,8 +1297,6 @@ Responde por escrito **sin consultar el texto**.
 Cualquier componente es válido. Lo importante es que la explicación conecte la *ausencia* del componente con una consecuencia concreta: sin ROLE el marco interpretativo queda libre; sin CONTEXTO el modelo asume parámetros típicos del dominio; sin TAREA la operación cognitiva es ambigua; sin ALCANCE el análisis puede expandirse sin límite; sin RESTRICCIONES el modelo puede afirmar lo que los datos no respaldan; sin SALIDA ESPERADA la respuesta no tiene estructura evaluable; sin VERIFICACIÓN no hay criterio para juzgar la validez de lo recibido.
 :::
 
----
-
 2. ¿Qué nivel de inferencia tiene este verbo y cuál es su principal riesgo? *"Interpreta el significado biológico de los genes sobreexpresados en el contexto de la respuesta al estrés lipídico."*
 
 ::: {.callout-note collapse="true"}
@@ -1298,8 +1304,6 @@ Cualquier componente es válido. Lo importante es que la explicación conecte la
 
 **Nivel inferencial** — interpretar requiere asumir un marco explicativo (aquí: respuesta metabólica al estrés lipídico) que va más allá de los datos crudos. El principal riesgo es que ese marco quede implícito: si el modelo lo elige por su cuenta, la interpretación no es verificable ni reproducible. La solución es declararlo explícitamente en el prompt — en TAREA si define el lente del análisis, en ALCANCE si delimita el territorio interpretativo, o en RESTRICCIONES si funciona como control epistemológico.
 :::
-
----
 
 3. Lee estos dos enunciados y decide cuál va en ALCANCE y cuál en RESTRICCIONES — y por qué:
    - *"Considera solo los genes con FDR < 0.05 y logFC > 1."*
@@ -1315,14 +1319,11 @@ El segundo va en **RESTRICCIONES**: es un control epistemológico expresado en n
 La regla práctica: si puedes escribirlo sin "no", es ALCANCE. Si necesitas negación para que tenga efecto, es RESTRICCIÓN.
 :::
 
----
-
 Si respondiste con seguridad las tres, comprueba si no hay *ilusión de competencia* [@koriat2005].
 
 > ¿Necesitas repasar algún término? Consulta el [**Glosario**](../apendices/glosario.qmd).
 
 > 🛠️ **Practica la construcción guiada:** el [Asistente de Prompting Científico](https://chatgpt.com/g/g-698031f05448819196530a1612610d8d-asistente-de-prompting-cientifico-modo-docente) te llevará por los siete componentes paso a paso.
-:::
 
 ## Referencias
 

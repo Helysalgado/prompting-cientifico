@@ -9,9 +9,16 @@ format:
   html:
     code-copy: true
     code-overflow: wrap
+    format-links: [pdf, docx]
+  pdf: default
+  docx: default
 execute:
   cache: false
 ---
+
+::: {.callout-note title="Descargar este módulo"}
+También disponible en [PDF](index.pdf) y [Word](index.docx).
+:::
 
 ## Antes de comenzar
 

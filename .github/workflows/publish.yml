@@ -37,7 +37,7 @@ jobs:
       - name: Render chapter exports
         run: |
           for ch in chapters/capitulo{1,2,3,4}/index.qmd; do
-            quarto render "$ch" --to pdf,docx
+            quarto render "$ch" --to pdf,docx --profile export
           done
 
       - name: Upload Pages artifact

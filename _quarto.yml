@@ -146,7 +146,6 @@ website:
 
 format:
   html:
-    format-links: [pdf, docx]
     include-after-body:
       - _includes/after-body.html
     theme: 
@@ -227,23 +226,6 @@ format:
     # Syntax highlighting
     # syntax-definitions:
     #   - assets/syntax/custom.xml
-
-  pdf:
-    toc: true
-    number-sections: true
-    lang: es
-    documentclass: scrartcl
-    mermaid-format: png
-    geometry:
-      - top=25mm
-      - left=25mm
-      - right=25mm
-      - bottom=25mm
-
-  docx:
-    toc: true
-    number-sections: true
-    lang: es
 
 execute:
   freeze: auto

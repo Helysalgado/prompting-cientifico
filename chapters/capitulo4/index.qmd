@@ -10,8 +10,6 @@ format:
     code-copy: true
     code-overflow: wrap
     format-links: [pdf, docx]
-  pdf: default
-  docx: default
 execute:
   cache: false
 ---

@@ -26,8 +26,8 @@ quarto render path/to/file.qmd
 
 # Export a chapter to Word or PDF
 quarto install tinytex   # once, for PDF
-quarto render chapters/capitulo1/index.qmd --to docx
-quarto render chapters/capitulo1/index.qmd --to pdf
+quarto render chapters/capitulo1/index.qmd --to docx --profile export
+quarto render chapters/capitulo1/index.qmd --to pdf --profile export
 
 # Check project configuration
 quarto check

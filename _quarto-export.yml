@@ -1,0 +1,16 @@
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    lang: es
+    documentclass: scrartcl
+    mermaid-format: png
+    geometry:
+      - top=25mm
+      - left=25mm
+      - right=25mm
+      - bottom=25mm
+  docx:
+    toc: true
+    number-sections: true
+    lang: es

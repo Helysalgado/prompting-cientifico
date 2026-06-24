@@ -37,7 +37,7 @@ jobs:
   export:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     strategy:
       fail-fast: false
       matrix:
@@ -65,6 +65,7 @@ jobs:
           quarto render "$ch" --to docx --profile export
 
       - name: Export PDF
+        continue-on-error: true
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ env.CHROME_PATH }}
         run: |
@@ -73,21 +74,31 @@ jobs:
           quarto render "$ch" --to pdf --profile export
 
       - name: Stage chapter exports
+        if: always()
         run: |
           mkdir -p "_export/chapters/${{ matrix.chapter }}"
-          cp "_site/chapters/${{ matrix.chapter }}/index.docx" "_export/chapters/${{ matrix.chapter }}/"
-          cp "_site/chapters/${{ matrix.chapter }}/index.pdf" "_export/chapters/${{ matrix.chapter }}/"
-          ls -la "_export/chapters/${{ matrix.chapter }}/"
+          for ext in docx pdf; do
+            src="_site/chapters/${{ matrix.chapter }}/index.${ext}"
+            if [ -f "$src" ]; then
+              cp "$src" "_export/chapters/${{ matrix.chapter }}/"
+            else
+              echo "::warning::Missing ${ext} for ${{ matrix.chapter }}"
+            fi
+          done
+          ls -la "_export/chapters/${{ matrix.chapter }}/" || true
 
       - name: Upload chapter exports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: export-${{ matrix.chapter }}
           path: _export/chapters/${{ matrix.chapter }}
           retention-days: 1
+          if-no-files-found: warn
 
   deploy:
     needs: [build, export]
+    if: ${{ always() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

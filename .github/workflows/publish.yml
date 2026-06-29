@@ -34,10 +34,10 @@ jobs:
           path: _site
           retention-days: 1
 
-  export:
+  export-docx:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -49,55 +49,68 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install export dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y librsvg2-bin chromium-browser
-          quarto install tinytex --no-prompt
-          npm install -g @mermaid-js/mermaid-cli
-          CHROME="$(command -v chromium-browser || command -v chromium || true)"
-          echo "CHROME_PATH=${CHROME}" >> "$GITHUB_ENV"
+      - name: Install DOCX dependencies
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
 
       - name: Export DOCX
-        run: |
-          ch="chapters/${{ matrix.chapter }}/index.qmd"
-          echo "Exporting DOCX: $ch"
-          quarto render "$ch" --to docx --profile export
+        run: quarto render "chapters/${{ matrix.chapter }}/index.qmd" --to docx --profile export
 
-      - name: Export PDF
-        continue-on-error: true
-        env:
-          PUPPETEER_EXECUTABLE_PATH: ${{ env.CHROME_PATH }}
-        run: |
-          ch="chapters/${{ matrix.chapter }}/index.qmd"
-          echo "Exporting PDF: $ch"
-          quarto render "$ch" --to pdf --profile export
-
-      - name: Stage chapter exports
-        if: always()
-        run: |
-          mkdir -p "_export/chapters/${{ matrix.chapter }}"
-          for ext in docx pdf; do
-            src="_site/chapters/${{ matrix.chapter }}/index.${ext}"
-            if [ -f "$src" ]; then
-              cp "$src" "_export/chapters/${{ matrix.chapter }}/"
-            else
-              echo "::warning::Missing ${ext} for ${{ matrix.chapter }}"
-            fi
-          done
-          ls -la "_export/chapters/${{ matrix.chapter }}/" || true
-
-      - name: Upload chapter exports
-        if: always()
+      - name: Upload DOCX
         uses: actions/upload-artifact@v4
         with:
-          name: export-${{ matrix.chapter }}
-          path: _export/chapters/${{ matrix.chapter }}
+          name: export-docx-${{ matrix.chapter }}
+          path: _site/chapters/${{ matrix.chapter }}/index.docx
+          retention-days: 1
+
+  export-pdf:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install PDF dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+          quarto install tinytex --no-prompt
+          npm install -g @mermaid-js/mermaid-cli
+
+      - name: Export PDFs
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: |
+          mkdir -p _export_pdf
+          for ch in capitulo1 capitulo2 capitulo3 capitulo4; do
+            echo "::group::PDF ${ch}"
+            if timeout 900 quarto render "chapters/${ch}/index.qmd" --to pdf --profile export; then
+              cp "_site/chapters/${ch}/index.pdf" "_export_pdf/${ch}.pdf"
+              echo "OK: ${ch}"
+            else
+              echo "::warning::PDF export failed for ${ch}"
+            fi
+            echo "::endgroup::"
+          done
+          ls -la _export_pdf/ || true
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: export-pdf
+          path: _export_pdf
           retention-days: 1
           if-no-files-found: warn
 
   deploy:
-    needs: [build, export]
+    needs: [build, export-docx, export-pdf]
     if: ${{ always() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
@@ -110,28 +123,39 @@ jobs:
           name: site-html
           path: _site
 
-      - name: Download chapter exports
+      - name: Download DOCX exports
         uses: actions/download-artifact@v4
         with:
-          pattern: export-*
+          pattern: export-docx-*
           merge-multiple: true
-          path: _exports
+          path: _exports-docx
+
+      - name: Download PDF exports
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: export-pdf
+          path: _exports-pdf
 
       - name: Merge exports into site
         run: |
           for ch in capitulo1 capitulo2 capitulo3 capitulo4; do
-            if [ -f "_exports/export-${ch}/index.docx" ]; then
-              cp "_exports/export-${ch}/index.docx" "_site/chapters/${ch}/"
+            docx="_exports-docx/export-docx-${ch}/index.docx"
+            pdf="_exports-pdf/${ch}.pdf"
+            if [ -f "$docx" ]; then
+              cp "$docx" "_site/chapters/${ch}/index.docx"
+              echo "DOCX OK: ${ch}"
             else
               echo "::warning::Missing DOCX for ${ch}"
             fi
-            if [ -f "_exports/export-${ch}/index.pdf" ]; then
-              cp "_exports/export-${ch}/index.pdf" "_site/chapters/${ch}/"
+            if [ -f "$pdf" ]; then
+              cp "$pdf" "_site/chapters/${ch}/index.pdf"
+              echo "PDF OK: ${ch}"
             else
               echo "::warning::Missing PDF for ${ch}"
             fi
           done
-          echo "Export files in site:"
+          echo "Files published:"
           ls -la _site/chapters/capitulo*/index.docx _site/chapters/capitulo*/index.pdf 2>/dev/null || true
 
       - name: Upload Pages artifact

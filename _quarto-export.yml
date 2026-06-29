@@ -3,7 +3,7 @@ format:
     toc: true
     number-sections: true
     lang: es
-    documentclass: scrartcl
+    documentclass: article
     mermaid-format: png
     geometry:
       - top=25mm

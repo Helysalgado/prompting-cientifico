@@ -14,3 +14,4 @@ format:
     toc: true
     number-sections: true
     lang: es
+    mermaid-format: png

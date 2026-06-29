@@ -49,11 +49,20 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Set up Chrome
+        id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Install DOCX dependencies
-        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+          npm install -g @mermaid-js/mermaid-cli
 
       - name: Export DOCX
-        run: quarto render "chapters/${{ matrix.chapter }}/index.qmd" --to docx --profile export
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: timeout 600 quarto render "chapters/${{ matrix.chapter }}/index.qmd" --to docx --profile export
 
       - name: Stage DOCX artifact
         run: |
@@ -82,11 +91,13 @@ jobs:
         id: setup-chrome
         uses: browser-actions/setup-chrome@v1
 
+      - name: Set up TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2
+
       - name: Install PDF dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y librsvg2-bin
-          quarto install tinytex --no-prompt
           npm install -g @mermaid-js/mermaid-cli
 
       - name: Export PDFs
@@ -144,6 +155,11 @@ jobs:
 
       - name: Merge exports into site
         run: |
+          pdf_count=$(find _exports-pdf -name '*.pdf' 2>/dev/null | wc -l | tr -d ' ')
+          if [ "$pdf_count" -lt 4 ]; then
+            echo "::error::Se esperaban 4 PDFs y se encontraron ${pdf_count}. Se cancela el deploy para no borrar descargas existentes."
+            exit 1
+          fi
           for ch in capitulo1 capitulo2 capitulo3 capitulo4; do
             docx="_exports-docx/${ch}.docx"
             pdf="_exports-pdf/${ch}.pdf"

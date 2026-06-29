@@ -9,7 +9,13 @@ format:
   html:
     code-copy: true
     code-overflow: wrap
-    format-links: [pdf, docx]
+    other-links:
+      - text: PDF
+        icon: file-pdf
+        href: index.pdf
+      - text: Word
+        icon: file-word
+        href: index.docx
 execute:
   cache: false
 ---

@@ -55,11 +55,16 @@ jobs:
       - name: Export DOCX
         run: quarto render "chapters/${{ matrix.chapter }}/index.qmd" --to docx --profile export
 
+      - name: Stage DOCX artifact
+        run: |
+          mkdir -p _artifact_docx
+          cp "_site/chapters/${{ matrix.chapter }}/index.docx" "_artifact_docx/${{ matrix.chapter }}.docx"
+
       - name: Upload DOCX
         uses: actions/upload-artifact@v4
         with:
           name: export-docx-${{ matrix.chapter }}
-          path: _site/chapters/${{ matrix.chapter }}/index.docx
+          path: _artifact_docx/${{ matrix.chapter }}.docx
           retention-days: 1
 
   export-pdf:
@@ -140,7 +145,7 @@ jobs:
       - name: Merge exports into site
         run: |
           for ch in capitulo1 capitulo2 capitulo3 capitulo4; do
-            docx="_exports-docx/export-docx-${ch}/index.docx"
+            docx="_exports-docx/${ch}.docx"
             pdf="_exports-pdf/${ch}.pdf"
             if [ -f "$docx" ]; then
               cp "$docx" "_site/chapters/${ch}/index.docx"

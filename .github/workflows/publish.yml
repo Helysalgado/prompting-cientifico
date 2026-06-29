@@ -37,7 +37,7 @@ jobs:
   export-docx:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
@@ -62,7 +62,10 @@ jobs:
       - name: Export DOCX
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
-        run: timeout 600 quarto render "chapters/${{ matrix.chapter }}/index.qmd" --to docx --profile export
+        run: |
+          limit=600
+          case "${{ matrix.chapter }}" in capitulo1|capitulo3) limit=1800 ;; esac
+          timeout "$limit" quarto render "chapters/${{ matrix.chapter }}/index.qmd" --to docx --profile export
 
       - name: Stage DOCX artifact
         run: |
@@ -107,7 +110,9 @@ jobs:
           mkdir -p _export_pdf
           for ch in capitulo1 capitulo2 capitulo3 capitulo4; do
             echo "::group::PDF ${ch}"
-            if timeout 900 quarto render "chapters/${ch}/index.qmd" --to pdf --profile export; then
+            limit=900
+            case "$ch" in capitulo1|capitulo3) limit=1800 ;; esac
+            if timeout "$limit" quarto render "chapters/${ch}/index.qmd" --to pdf --profile export; then
               cp "_site/chapters/${ch}/index.pdf" "_export_pdf/${ch}.pdf"
               echo "OK: ${ch}"
             else
